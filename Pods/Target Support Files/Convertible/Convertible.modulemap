@@ -1,0 +1,6 @@
+framework module Convertible {
+  umbrella header "Convertible-umbrella.h"
+
+  export *
+  module * { export * }
+}
