@@ -1,0 +1,6 @@
+framework module AssociatedValues {
+  umbrella header "AssociatedValues-umbrella.h"
+
+  export *
+  module * { export * }
+}

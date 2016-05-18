@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-August-AugustTests/Allegro.framework"
+  install_framework "Pods-August-AugustTests/AssociatedValues.framework"
   install_framework "Pods-August-AugustTests/Convertible.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-August-AugustTests/Allegro.framework"
+  install_framework "Pods-August-AugustTests/AssociatedValues.framework"
   install_framework "Pods-August-AugustTests/Convertible.framework"
 fi

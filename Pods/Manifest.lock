@@ -1,13 +1,16 @@
 PODS:
   - Allegro (1.1.1)
+  - AssociatedValues (1.0.3)
   - Convertible (1.0.9):
     - Allegro (~> 1.1.0)
 
 DEPENDENCIES:
+  - AssociatedValues (~> 1.0.3)
   - Convertible (~> 1.0.3)
 
 SPEC CHECKSUMS:
   Allegro: 7644f86231450631fae8ce6baf2bb1d6f4c8fa22
+  AssociatedValues: 749e05b3df45f80c0ad99c6b15df3a3d53906c9e
   Convertible: 9e0310d1e450b55eeedcf64ab327750b09aa312d
 
 PODFILE CHECKSUM: 64688ad8002642124d50ae14172420e479182288

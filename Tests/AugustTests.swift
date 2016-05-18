@@ -7,30 +7,43 @@
 //
 
 import XCTest
-@testable import August
+import August
+
+struct User : Convertible {
+    var id: Int?
+    var name: String
+}
 
 class AugustTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testRequestBuilder() {
+        let startExpectation = self.expectationWithDescription("Start")
+        let successExpectation = self.expectationWithDescription("Success")
+        let responseExpecation = self.expectationWithDescription("Response")
+        let completionExpectation = self.expectationWithDescription("Completion")
+        var (_sent, _received) = (-1.0, -1.0)
+        POST<User>("http://jsonplaceholder.typicode.com/")
+            .headers(["Content-Type":"application/json"])
+            .path("/users")
+            .body(User(id: nil, name: "Brad Hilton"))
+            .start { (request) -> Void in
+                startExpectation.fulfill()
+            }.progress { (sent, received, request) in
+                XCTAssert((_sent, _received) != (sent, received))
+                (_sent, _received) = (sent, received)
+            }.success { (response, request) -> Void in
+                XCTAssert(response.body.id != nil)
+                XCTAssert(response.body.name == "Brad Hilton")
+                successExpectation.fulfill()
+            }.failure { (error, request) -> Void in
+                XCTFail("Error: \(error)")
+            }.response(201) { (response, request) -> Void in
+                responseExpecation.fulfill()
+            }.completion { (response, errors, request) -> Void in
+                completionExpectation.fulfill()
+            }.logging(true).begin()
+        waitForExpectationsWithTimeout(100, handler: nil)
     }
     
 }
+
