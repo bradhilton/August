@@ -23,18 +23,12 @@ internal class SessionDelegate : NSObject, NSURLSessionDataDelegate {
     }
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
-        guard let parent = task.parent else { fatalError() }
+        guard let parent = task.parent else { return }
         var response: Response<NSData>?
         do {
             if let error = error { throw error }
             parent.received = 1.0
-            let foundationResponse = try self.foundationResponse(task)
-            response = Response(request: parent.request,
-                                body: parent.body,
-                                responseTime: parent.timer.time,
-                                data: parent.body,
-                                response: foundationResponse,
-                                options: parent.request.options)
+            response = try Response(task: parent, response: foundationResponse(task))
             response!.log()
             try parent.request.reportSuccess(response!)
         } catch {
