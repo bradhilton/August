@@ -89,7 +89,7 @@ extension _RequestBuilder {
     }
     
     public func queue(queue: NSOperationQueue) -> Self {
-        return modify { (inout request: Request) in request.callbacks.queue = queue }
+        return modify { (inout request: Request) in request.queue = queue }
     }
     
     public func options(options: [ConvertibleOption]) -> Self {
@@ -100,7 +100,7 @@ extension _RequestBuilder {
         return modify { (inout request: Request) in request.logging = logging }
     }
     
-    public func begin() -> NSURLSessionTask {
+    public func begin() -> Task {
         return create().begin()
     }
     

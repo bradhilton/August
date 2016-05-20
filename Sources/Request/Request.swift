@@ -22,29 +22,32 @@ public struct Request {
     public var shouldHandleCookies = request.HTTPShouldHandleCookies
     public var shouldUsePipelining = request.HTTPShouldUsePipelining
     public var session: Session = .sharedSession
-    public var callbacks = Callbacks()
     public var options = [ConvertibleOption]()
     public var logging = false
+    
+    public var queue = NSOperationQueue.mainQueue()
+    internal var startCallbacks = [StartCallback]()
+    internal var progressCallbacks = [ProgressCallback]()
+    internal var responseCallbacks = [ResponseCallback]()
+    internal var errorCallbacks = [ErrorCallback]()
+    internal var completionCallbacks = [CompletionCallback]()
+    internal var successCallback: SuccessCallback?
+    internal var failureCallback: FailureCallback?
     
     public init(_ url: Url) {
         self.url = url
     }
     
-    public init(_ string: String) {
+    public init(_ string: String = "") {
         self.url = Url(string)
-    }
-    
-    public init() {
-        self.url = Url()
     }
     
     public func build() -> Builder {
         return Builder(self)
     }
     
-    public func begin() -> NSURLSessionTask {
-        var context = TaskContext(request: self)
-        return context.task()
+    public func begin() -> Task {
+        return Task(request: self)
     }
     
 }

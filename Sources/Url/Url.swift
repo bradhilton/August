@@ -18,7 +18,7 @@ public struct Url {
         string = components.string ?? string
     }
     
-    public var string: String
+    private var string: String
     
     public var scheme: String? {
         get {
@@ -103,16 +103,40 @@ public struct Url {
         }
     }
     
-    public init(_ string: String) {
+    public init(_ string: String = "") {
         self.string = string
     }
     
-    public init() {
-        self.init("")
+}
+
+extension Url : StringLiteralConvertible {
+    
+    public init(unicodeScalarLiteral value: String) {
+        self.string = value
+    }
+
+    public init(extendedGraphemeClusterLiteral value: String) {
+        self.string = value
     }
     
-    public var foundationUrl: NSURL {
-        return components.URL ?? NSURL()
+    public init(stringLiteral value: String) {
+        self.string = value
+    }
+    
+}
+
+extension Url : CustomStringConvertible {
+    
+    public var description: String {
+        return string
+    }
+    
+}
+
+extension NSURL {
+    
+    internal convenience init?(_ url: Url) {
+        self.init(string: url.string)
     }
     
 }

@@ -26,21 +26,22 @@ class AugustTests: XCTestCase {
             .headers(["Content-Type":"application/json"])
             .path("/users")
             .body(User(id: nil, name: "Brad Hilton"))
-            .start { (request) -> Void in
+            .start { task in
                 startExpectation.fulfill()
-            }.progress { (sent, received, request) in
-                XCTAssert((_sent, _received) != (sent, received))
-                (_sent, _received) = (sent, received)
-            }.success { (response, request) -> Void in
+            }.progress { task in
+                XCTAssert((_sent, _received) != (task.sent, task.received))
+                (_sent, _received) = (task.sent, task.received)
+            }.success { response in
                 XCTAssert(response.body.id != nil)
                 XCTAssert(response.body.name == "Brad Hilton")
                 successExpectation.fulfill()
-            }.failure { (error, request) -> Void in
+            }.failure { (error, request) in
                 XCTFail("Error: \(error)")
-            }.response(201) { (response, request) -> Void in
+            }.response(201) { response in
                 responseExpecation.fulfill()
-            }.completion { (response, errors, request) -> Void in
+            }.completion { (response, errors, request) in
                 completionExpectation.fulfill()
+                XCTAssert((_sent, _received) == (1.0, 1.0))
             }.logging(true).begin()
         waitForExpectationsWithTimeout(100, handler: nil)
     }

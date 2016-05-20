@@ -8,31 +8,41 @@
 
 public struct Response<Body : DataInitializable> {
     
+    public let request: Request
     public let body: Body
-    public let foundationResponse: NSHTTPURLResponse
     public let responseTime: NSTimeInterval
+    internal let data: NSData
+    internal let response: NSHTTPURLResponse
     internal let options: [ConvertibleOption]
     
+    internal init(request: Request, body: Body, responseTime: NSTimeInterval, data: NSData, response: NSHTTPURLResponse, options: [ConvertibleOption]) {
+        self.request = request
+        self.body = body
+        self.responseTime = responseTime
+        self.data = data
+        self.response = response
+        self.options = options
+    }
+    
+    public init<T>(_ response: Response<T>) throws {
+        try self.init(request: response.request,
+                      body: Body.initializeWithData(response.data, options: response.options),
+                      responseTime: response.responseTime, data: response.data,
+                      response: response.response,
+                      options: response.options)
+    }
+    
     public var statusCode: Int {
-        return foundationResponse.statusCode
+        return response.statusCode
+    }
+    
+    public var statusMessage: String {
+        return NSHTTPURLResponse.localizedStringForStatusCode(statusCode)
     }
     
     public var headers: [String : String] {
-        return foundationResponse.allHeaderFields as? [String : String] ?? [:]
+        return response.allHeaderFields as? [String : String] ?? [:]
     }
     
 }
 
-extension Response where Body : NSData {
-    
-    public func createResponse<T : DataInitializable>() throws -> Response<T> {
-        return try Response<T>(body: T.initializeWithData(body, options: options), foundationResponse: foundationResponse, responseTime: responseTime, options: options)
-    }
-    
-    internal func handleResponse<T : DataInitializable>(handler: (Response<T>, Request) -> Void) {
-        NSOperationQueue().addOperationWithBlock {
-            
-        }
-    }
-    
-}

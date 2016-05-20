@@ -38,14 +38,14 @@ public struct Configuration {
     public var cookieAcceptPolicy: NSHTTPCookieAcceptPolicy
     public var additionalHeaders: [String : String]?
     public var maximumConnectionsPerHost: Int
-//    public var maximumSimultaneousTasks: Int? // TODO: Custom property to limit number of simultaneous tasks
+    public var maximumSimultaneousTasks: Int?
     public var cookieStorage: NSHTTPCookieStorage?
     public var credentialStorage: NSURLCredentialStorage?
     public var cache: NSURLCache?
 //    public var shouldUseExtendedBackgroundIdleMode: Bool
     public var protocolClasses: [AnyClass]?
     
-    public init(_ type: Type) {
+    public init(_ type: Type = .Default) {
         self.type = type
         let configuration = self.type.configuration
 //        identifier = configuration.identifier
@@ -78,11 +78,7 @@ public struct Configuration {
         protocolClasses = configuration.protocolClasses
     }
     
-    public init() {
-        self.init(.Default)
-    }
-    
-    public var foundationConfiguration: NSURLSessionConfiguration {
+    internal var foundationConfiguration: NSURLSessionConfiguration {
         let configuration = type.configuration
         configuration.requestCachePolicy = cachePolicy
         configuration.timeoutIntervalForRequest = timeoutInterval
@@ -106,6 +102,7 @@ public struct Configuration {
 //        configuration.shouldUseExtendedBackgroundIdleMode = shouldUseExtendedBackgroundIdleMode
         configuration.protocolClasses = protocolClasses
         return configuration
+        
     }
     
 }

@@ -8,12 +8,12 @@
 
 extension Request {
     
-    public func foundationRequest() throws -> NSURLRequest {
+    private func foundationRequest() throws -> NSURLRequest {
         let request = NSMutableURLRequest()
-        request.URL = NSURL(string: url.string)
+        request.URL = NSURL(url)
         request.cachePolicy = cachePolicy
         request.timeoutInterval = timeoutInterval
-        request.mainDocumentURL = mainDocumentURL != nil ? NSURL(string: mainDocumentURL!.string) : nil
+        request.mainDocumentURL = mainDocumentURL != nil ? NSURL(mainDocumentURL!) : nil
         request.networkServiceType = networkServiceType
         request.allowsCellularAccess = allowsCellularAccess
         request.HTTPMethod = method.rawValue
@@ -22,6 +22,10 @@ extension Request {
         request.HTTPShouldHandleCookies = shouldHandleCookies
         request.HTTPShouldUsePipelining = shouldUsePipelining
         return request
+    }
+    
+    internal func task() throws -> NSURLSessionTask {
+        return session.session.dataTaskWithRequest(try foundationRequest())
     }
     
 }

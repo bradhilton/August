@@ -13,7 +13,7 @@ extension _RequestBuilder {
     }
     
     public func url(string: String) -> Self {
-        return modify { (inout url: Url) in url.string = string }
+        return modify { (inout url: Url) in url = Url(string) }
     }
     
     public func scheme(scheme: String?) -> Self {

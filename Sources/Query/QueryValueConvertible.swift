@@ -21,8 +21,6 @@ extension QueryValueSerializable {
 }
 
 extension String : QueryValueSerializable {}
-extension Int : QueryValueSerializable {}
-extension Bool : QueryValueSerializable {}
 
 extension Array : QueryValueSerializable {
     

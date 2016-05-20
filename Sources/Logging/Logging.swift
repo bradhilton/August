@@ -6,51 +6,56 @@
 //  Copyright © 2016 Brad Hilton. All rights reserved.
 //
 
-struct Logging {
+extension Request : CustomDebugStringConvertible {
     
-    static func logRequest(request: NSURLRequest) {
-        if let method = request.HTTPMethod, url = request.URL?.absoluteString {
-                print("---> \(method) \(url)")
-                printHeaderFields(request.allHTTPHeaderFields)
-                printBody(request.HTTPBody)
-                print("---> END " + bytesDescription(request.HTTPBody))
-        }
-    }
-    
-    static func logResponse(response: NSHTTPURLResponse, request: Request, responseTime: NSTimeInterval, data: NSData) {
-        print("<--- \(request.method.rawValue) \(request.url.string) (\(response.statusCode), \(responseTimeDescription(responseTime)))")
-        printHeaderFields(response.allHeaderFields)
-        printBody(data)
-        print("<--- END " + bytesDescription(data))
-    }
-    
-    private static func responseTimeDescription(responseTime: NSTimeInterval) -> NSString {
-        return NSString(format: "%0.2fs", responseTime)
-    }
-    
-    private static func printHeaders(headers: [String : String]) {
-        for (field, value) in headers {
-            print("\(field): \(value)")
-        }
-    }
-    
-    private static func printHeaderFields(headerFields: [NSObject : AnyObject]?) {
-        if let headerFields = headerFields {
-            for (field, value) in headerFields {
-                print("\(field): \(value)")
+    public var debugDescription: String {
+        var description = "---> \(method) \(url)\n"
+        addHeaders(&description, headers: headers)
+        if let body = body {
+            guard let data = try? body.serializeToDataWithOptions(options) else {
+                return description + "{ ERROR: Unable to serialize data } \n---> END"
             }
+            addData(&description, data: data)
+            return description + "\n---> END (\(data.length) bytes)"
+        } else {
+            return description + "---> END (0 bytes)"
         }
     }
     
-    private static func printBody(data: NSData?) {
-        if let body = data,
-            let bodyString = NSString(data: body, encoding: NSUTF8StringEncoding) where bodyString.length > 0 {
-                print(bodyString)
-        }
-    }
-    
-    private static func bytesDescription(data: NSData?) -> String {
-        return "(\(data != nil ? data!.length : 0) bytes)"
+    internal func log() {
+        if logging { backgroundDebugPrint(self) }
     }
     
 }
+
+extension Response : CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
+        var description = "<--- \(request.method) \(request.url) (\(statusCode) \(statusMessage), \(NSString(format: "%0.2fs", responseTime)))\n"
+        addHeaders(&description, headers: headers)
+        addData(&description, data: data)
+        return description + "\n<--- END (\(data.length) bytes)"
+    }
+    
+    internal func log() {
+        if request.logging { backgroundDebugPrint(self) }
+    }
+    
+}
+
+private func addHeaders(inout description: String, headers: [String : String]) {
+    for (field, value) in headers {
+        description += "\(field): \(value)\n"
+    }
+}
+
+private func addData(inout description: String, data: NSData) {
+    if let string = String(data: data, encoding: NSUTF8StringEncoding) where string.characters.count > 0 {
+        description += string
+    }
+}
+
+private func backgroundDebugPrint<T>(value: T) {
+    NSOperationQueue().addOperationWithBlock { debugPrint(value) }
+}
+

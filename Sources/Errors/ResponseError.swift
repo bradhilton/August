@@ -11,10 +11,11 @@ public struct ResponseError : ErrorType, CustomStringConvertible {
     public var response: Response<NSData>
     
     public var description: String {
+        let message = "\(response.statusCode) \(response.statusMessage)"
         switch response.statusCode {
-        case 400..<500: return "Client Error: Returned \(response.statusCode)"
-        case 500..<600: return "Server Error: Returned \(response.statusCode)"
-        default: return "Unexpected Response: Returned \(response.statusCode)"
+        case 400..<500: return "Client Error: \(message)"
+        case 500..<600: return "Server Error: \(message)"
+        default: return "Unexpected Response: \(message)"
         }
     }
     

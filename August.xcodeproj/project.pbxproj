@@ -14,32 +14,30 @@
 		A2CD54761CEBFBF9000FF02B /* August.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2CD546B1CEBFBF9000FF02B /* August.framework */; };
 		A2CD547B1CEBFBF9000FF02B /* AugustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD547A1CEBFBF9000FF02B /* AugustTests.swift */; };
 		A2CD54861CEC0B31000FF02B /* August.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A2CD54851CEC0B31000FF02B /* August.podspec */; };
-		A2CD54E81CECB5D8000FF02B /* Callbacks+ConvenienceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54E31CECB5D8000FF02B /* Callbacks+ConvenienceMethods.swift */; };
-		A2CD54E91CECB5D8000FF02B /* Callbacks+Reporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54E41CECB5D8000FF02B /* Callbacks+Reporting.swift */; };
 		A2CD54EA1CECB5D8000FF02B /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54E51CECB5D8000FF02B /* Callbacks.swift */; };
 		A2CD54EB1CECB5D8000FF02B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54E71CECB5D8000FF02B /* Configuration.swift */; };
 		A2CD550E1CECB5EA000FF02B /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54ED1CECB5EA000FF02B /* ResponseError.swift */; };
 		A2CD550F1CECB5EA000FF02B /* UnknownError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54EE1CECB5EA000FF02B /* UnknownError.swift */; };
 		A2CD55101CECB5EA000FF02B /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54F11CECB5EA000FF02B /* Logging.swift */; };
 		A2CD55111CECB5EA000FF02B /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54F31CECB5EA000FF02B /* Method.swift */; };
-		A2CD55121CECB5EA000FF02B /* NSURLSessionTask+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54F41CECB5EA000FF02B /* NSURLSessionTask+Extensions.swift */; };
 		A2CD55131CECB5EA000FF02B /* QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54F61CECB5EA000FF02B /* QueryItem.swift */; };
 		A2CD55141CECB5EA000FF02B /* QueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54F71CECB5EA000FF02B /* QueryItems.swift */; };
 		A2CD55151CECB5EA000FF02B /* QueryValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54F81CECB5EA000FF02B /* QueryValueConvertible.swift */; };
 		A2CD55161CECB5EA000FF02B /* _RequestBuilder+Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54FB1CECB5EA000FF02B /* _RequestBuilder+Callbacks.swift */; };
-		A2CD55171CECB5EA000FF02B /* _RequestBuilder+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54FC1CECB5EA000FF02B /* _RequestBuilder+Configuration.swift */; };
 		A2CD55181CECB5EA000FF02B /* _RequestBuilder+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54FD1CECB5EA000FF02B /* _RequestBuilder+Url.swift */; };
 		A2CD55191CECB5EA000FF02B /* _RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54FE1CECB5EA000FF02B /* _RequestBuilder.swift */; };
 		A2CD551A1CECB5EA000FF02B /* Request+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD54FF1CECB5EA000FF02B /* Request+Builder.swift */; };
-		A2CD551B1CECB5EA000FF02B /* Request+FoundationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55001CECB5EA000FF02B /* Request+FoundationRequest.swift */; };
+		A2CD551B1CECB5EA000FF02B /* Request+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55001CECB5EA000FF02B /* Request+Task.swift */; };
 		A2CD551C1CECB5EA000FF02B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55011CECB5EA000FF02B /* Request.swift */; };
 		A2CD551D1CECB5EA000FF02B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55031CECB5EA000FF02B /* Response.swift */; };
 		A2CD551E1CECB5EA000FF02B /* ResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55041CECB5EA000FF02B /* ResponseCodes.swift */; };
 		A2CD551F1CECB5EA000FF02B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55061CECB5EA000FF02B /* Session.swift */; };
 		A2CD55201CECB5EA000FF02B /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55071CECB5EA000FF02B /* SessionDelegate.swift */; };
-		A2CD55211CECB5EA000FF02B /* FailedTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55091CECB5EA000FF02B /* FailedTask.swift */; };
 		A2CD55241CECB5EA000FF02B /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD550D1CECB5EA000FF02B /* Url.swift */; };
-		A2CD55271CECE90F000FF02B /* TaskContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55261CECE90F000FF02B /* TaskContext.swift */; };
+		A2CD55291CED3E95000FF02B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55281CED3E95000FF02B /* Task.swift */; };
+		A2CD552B1CEE194D000FF02B /* Request+Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD552A1CEE194D000FF02B /* Request+Callbacks.swift */; };
+		A2CD552D1CEE1BF4000FF02B /* Request+Reporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD552C1CEE1BF4000FF02B /* Request+Reporting.swift */; };
+		A2CD55331CEF794C000FF02B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CD55321CEF794C000FF02B /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,32 +63,30 @@
 		A2CD547A1CEBFBF9000FF02B /* AugustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugustTests.swift; sourceTree = "<group>"; };
 		A2CD547C1CEBFBF9000FF02B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2CD54851CEC0B31000FF02B /* August.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = August.podspec; sourceTree = "<group>"; };
-		A2CD54E31CECB5D8000FF02B /* Callbacks+ConvenienceMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Callbacks+ConvenienceMethods.swift"; sourceTree = "<group>"; };
-		A2CD54E41CECB5D8000FF02B /* Callbacks+Reporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Callbacks+Reporting.swift"; sourceTree = "<group>"; };
 		A2CD54E51CECB5D8000FF02B /* Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
 		A2CD54E71CECB5D8000FF02B /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A2CD54ED1CECB5EA000FF02B /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		A2CD54EE1CECB5EA000FF02B /* UnknownError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownError.swift; sourceTree = "<group>"; };
 		A2CD54F11CECB5EA000FF02B /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		A2CD54F31CECB5EA000FF02B /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
-		A2CD54F41CECB5EA000FF02B /* NSURLSessionTask+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLSessionTask+Extensions.swift"; sourceTree = "<group>"; };
 		A2CD54F61CECB5EA000FF02B /* QueryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryItem.swift; sourceTree = "<group>"; };
 		A2CD54F71CECB5EA000FF02B /* QueryItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryItems.swift; sourceTree = "<group>"; };
 		A2CD54F81CECB5EA000FF02B /* QueryValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryValueConvertible.swift; sourceTree = "<group>"; };
 		A2CD54FB1CECB5EA000FF02B /* _RequestBuilder+Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "_RequestBuilder+Callbacks.swift"; sourceTree = "<group>"; };
-		A2CD54FC1CECB5EA000FF02B /* _RequestBuilder+Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "_RequestBuilder+Configuration.swift"; sourceTree = "<group>"; };
 		A2CD54FD1CECB5EA000FF02B /* _RequestBuilder+Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "_RequestBuilder+Url.swift"; sourceTree = "<group>"; };
 		A2CD54FE1CECB5EA000FF02B /* _RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _RequestBuilder.swift; sourceTree = "<group>"; };
 		A2CD54FF1CECB5EA000FF02B /* Request+Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Builder.swift"; sourceTree = "<group>"; };
-		A2CD55001CECB5EA000FF02B /* Request+FoundationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+FoundationRequest.swift"; sourceTree = "<group>"; };
+		A2CD55001CECB5EA000FF02B /* Request+Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Task.swift"; sourceTree = "<group>"; };
 		A2CD55011CECB5EA000FF02B /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		A2CD55031CECB5EA000FF02B /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		A2CD55041CECB5EA000FF02B /* ResponseCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCodes.swift; sourceTree = "<group>"; };
 		A2CD55061CECB5EA000FF02B /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A2CD55071CECB5EA000FF02B /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
-		A2CD55091CECB5EA000FF02B /* FailedTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailedTask.swift; sourceTree = "<group>"; };
 		A2CD550D1CECB5EA000FF02B /* Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
-		A2CD55261CECE90F000FF02B /* TaskContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskContext.swift; sourceTree = "<group>"; };
+		A2CD55281CED3E95000FF02B /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		A2CD552A1CEE194D000FF02B /* Request+Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Callbacks.swift"; sourceTree = "<group>"; };
+		A2CD552C1CEE1BF4000FF02B /* Request+Reporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Reporting.swift"; sourceTree = "<group>"; };
+		A2CD55321CEF794C000FF02B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		D030310CB573751FD59D7C51 /* Pods-August-AugustTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-August-AugustTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-August-AugustTests/Pods-August-AugustTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE4D2F76B478A59C82B1A80B /* libPods-AugustTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AugustTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D12E0535700C0BBA238C22 /* Pods-August.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-August.debug.xcconfig"; path = "Pods/Target Support Files/Pods-August/Pods-August.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,8 +165,6 @@
 				A2CD54E21CECB5D8000FF02B /* Callbacks */,
 				A2CD54E61CECB5D8000FF02B /* Configuration */,
 				A2CD54EC1CECB5EA000FF02B /* Errors */,
-				A2CD54EF1CECB5EA000FF02B /* Extensions */,
-				A2CD55251CECB602000FF02B /* Extensions */,
 				A2CD54F01CECB5EA000FF02B /* Logging */,
 				A2CD54F21CECB5EA000FF02B /* Method */,
 				A2CD54F51CECB5EA000FF02B /* Query */,
@@ -197,8 +191,6 @@
 		A2CD54E21CECB5D8000FF02B /* Callbacks */ = {
 			isa = PBXGroup;
 			children = (
-				A2CD54E31CECB5D8000FF02B /* Callbacks+ConvenienceMethods.swift */,
-				A2CD54E41CECB5D8000FF02B /* Callbacks+Reporting.swift */,
 				A2CD54E51CECB5D8000FF02B /* Callbacks.swift */,
 			);
 			path = Callbacks;
@@ -219,13 +211,6 @@
 				A2CD54EE1CECB5EA000FF02B /* UnknownError.swift */,
 			);
 			path = Errors;
-			sourceTree = "<group>";
-		};
-		A2CD54EF1CECB5EA000FF02B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A2CD54F01CECB5EA000FF02B /* Logging */ = {
@@ -259,7 +244,9 @@
 			children = (
 				A2CD54FA1CECB5EA000FF02B /* _RequestBuilder */,
 				A2CD54FF1CECB5EA000FF02B /* Request+Builder.swift */,
-				A2CD55001CECB5EA000FF02B /* Request+FoundationRequest.swift */,
+				A2CD552A1CEE194D000FF02B /* Request+Callbacks.swift */,
+				A2CD552C1CEE1BF4000FF02B /* Request+Reporting.swift */,
+				A2CD55001CECB5EA000FF02B /* Request+Task.swift */,
 				A2CD55011CECB5EA000FF02B /* Request.swift */,
 			);
 			path = Request;
@@ -269,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				A2CD54FB1CECB5EA000FF02B /* _RequestBuilder+Callbacks.swift */,
-				A2CD54FC1CECB5EA000FF02B /* _RequestBuilder+Configuration.swift */,
 				A2CD54FD1CECB5EA000FF02B /* _RequestBuilder+Url.swift */,
 				A2CD54FE1CECB5EA000FF02B /* _RequestBuilder.swift */,
 			);
@@ -297,11 +283,10 @@
 		A2CD55081CECB5EA000FF02B /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				A2CD55091CECB5EA000FF02B /* FailedTask.swift */,
-				A2CD55261CECE90F000FF02B /* TaskContext.swift */,
+				A2CD55281CED3E95000FF02B /* Task.swift */,
+				A2CD55321CEF794C000FF02B /* Timer.swift */,
 			);
-			name = Task;
-			path = TaskDelegate;
+			path = Task;
 			sourceTree = "<group>";
 		};
 		A2CD550C1CECB5EA000FF02B /* Url */ = {
@@ -310,14 +295,6 @@
 				A2CD550D1CECB5EA000FF02B /* Url.swift */,
 			);
 			path = Url;
-			sourceTree = "<group>";
-		};
-		A2CD55251CECB602000FF02B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				A2CD54F41CECB5EA000FF02B /* NSURLSessionTask+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,16 +490,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2CD55111CECB5EA000FF02B /* Method.swift in Sources */,
-				A2CD55121CECB5EA000FF02B /* NSURLSessionTask+Extensions.swift in Sources */,
-				A2CD551B1CECB5EA000FF02B /* Request+FoundationRequest.swift in Sources */,
-				A2CD55171CECB5EA000FF02B /* _RequestBuilder+Configuration.swift in Sources */,
-				A2CD55271CECE90F000FF02B /* TaskContext.swift in Sources */,
+				A2CD551B1CECB5EA000FF02B /* Request+Task.swift in Sources */,
 				A2CD551D1CECB5EA000FF02B /* Response.swift in Sources */,
-				A2CD54E81CECB5D8000FF02B /* Callbacks+ConvenienceMethods.swift in Sources */,
 				A2CD550F1CECB5EA000FF02B /* UnknownError.swift in Sources */,
-				A2CD54E91CECB5D8000FF02B /* Callbacks+Reporting.swift in Sources */,
 				A2CD55101CECB5EA000FF02B /* Logging.swift in Sources */,
 				A2CD551E1CECB5EA000FF02B /* ResponseCodes.swift in Sources */,
+				A2CD552D1CEE1BF4000FF02B /* Request+Reporting.swift in Sources */,
 				A2CD550E1CECB5EA000FF02B /* ResponseError.swift in Sources */,
 				A2CD55161CECB5EA000FF02B /* _RequestBuilder+Callbacks.swift in Sources */,
 				A2CD55241CECB5EA000FF02B /* Url.swift in Sources */,
@@ -531,12 +504,14 @@
 				A2CD54EB1CECB5D8000FF02B /* Configuration.swift in Sources */,
 				A2CD551C1CECB5EA000FF02B /* Request.swift in Sources */,
 				A2CD54EA1CECB5D8000FF02B /* Callbacks.swift in Sources */,
+				A2CD55331CEF794C000FF02B /* Timer.swift in Sources */,
 				A2CD55181CECB5EA000FF02B /* _RequestBuilder+Url.swift in Sources */,
 				A2CD55131CECB5EA000FF02B /* QueryItem.swift in Sources */,
-				A2CD55211CECB5EA000FF02B /* FailedTask.swift in Sources */,
+				A2CD552B1CEE194D000FF02B /* Request+Callbacks.swift in Sources */,
 				A2CD551F1CECB5EA000FF02B /* Session.swift in Sources */,
 				A2CD55151CECB5EA000FF02B /* QueryValueConvertible.swift in Sources */,
 				A2CD55141CECB5EA000FF02B /* QueryItems.swift in Sources */,
+				A2CD55291CED3E95000FF02B /* Task.swift in Sources */,
 				A2CD55191CECB5EA000FF02B /* _RequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,41 +9,38 @@
 internal class SessionDelegate : NSObject, NSURLSessionDataDelegate {
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
-        task.context.sent = progress(task.countOfBytesSent, expected: task.countOfBytesExpectedToSend)
+        task.parent?.sent = progress(task.countOfBytesSent, expected: task.countOfBytesExpectedToSend)
     }
     
     func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
-        dataTask.context.sent = 1.0
+        dataTask.parent?.sent = 1.0
         completionHandler(.Allow)
     }
     
     func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-        dataTask.context.received = progress(dataTask.countOfBytesReceived, expected: dataTask.countOfBytesExpectedToReceive)
-        dataTask.context.body.appendData(data)
+        dataTask.parent?.received = progress(dataTask.countOfBytesReceived, expected: dataTask.countOfBytesExpectedToReceive)
+        dataTask.parent?.body.appendData(data)
     }
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
+        guard let parent = task.parent else { fatalError() }
         var response: Response<NSData>?
         do {
             if let error = error { throw error }
-            task.context.received = 1.0
+            parent.received = 1.0
             let foundationResponse = try self.foundationResponse(task)
-            let responseTime = NSDate().timeIntervalSinceDate(task.context.startTime)
-            if task.context.request.logging {
-                Logging.logResponse(foundationResponse,
-                                    request: task.context.request,
-                                    responseTime: responseTime,
-                                    data: task.context.body)
-            }
-            response = Response(body: task.context.body as NSData,
-                                foundationResponse: foundationResponse,
-                                responseTime: responseTime,
-                                options: task.context.request.options)
-            try task.context.request.callbacks.reportSuccess(response!, request: task.context.request)
+            response = Response(request: parent.request,
+                                body: parent.body,
+                                responseTime: parent.timer.time,
+                                data: parent.body,
+                                response: foundationResponse,
+                                options: parent.request.options)
+            response!.log()
+            try parent.request.reportSuccess(response!)
         } catch {
-            task.context.handleError(error)
+            parent.handleError(error)
         }
-        task.context.complete(response)
+        parent.complete(response)
     }
     
     private func foundationResponse(task: NSURLSessionTask) throws -> NSHTTPURLResponse {
