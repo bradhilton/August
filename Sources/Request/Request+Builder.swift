@@ -10,9 +10,9 @@ extension Request {
     
     public struct Builder : _RequestBuilder {
         
-        public typealias ResponseType = NSData
+        public typealias ResponseType = Data
         
-        private let request: Request
+        fileprivate let request: Request
         
         public init(_ request: Request) {
             self.request = request
@@ -22,8 +22,8 @@ extension Request {
             return request
         }
         
-        public func method(method: Method) -> Builder {
-            return modify { (inout request: Request) in request.method = method }
+        public func method(_ method: Method) -> Builder {
+            return modify { (request: inout Request) in request.method = method }
         }
         
     }
@@ -34,7 +34,7 @@ public struct GET<T : DataInitializable> : _RequestBuilder {
     
     public typealias ResponseType = T
     
-    private let request: Request
+    fileprivate let request: Request
     
     public init(_ request: Request) {
         var copy = request
@@ -52,7 +52,7 @@ public struct POST<T : DataInitializable> : _RequestBuilder {
     
     public typealias ResponseType = T
     
-    private let request: Request
+    fileprivate let request: Request
     
     public init(_ request: Request) {
         var copy = request
@@ -70,7 +70,7 @@ public struct PUT<T : DataInitializable> : _RequestBuilder {
     
     public typealias ResponseType = T
     
-    private let request: Request
+    fileprivate let request: Request
     
     public init(_ request: Request) {
         var copy = request
@@ -88,7 +88,7 @@ public struct DELETE<T : DataInitializable> : _RequestBuilder {
     
     public typealias ResponseType = T
     
-    private let request: Request
+    fileprivate let request: Request
     
     public init(_ request: Request) {
         var copy = request
@@ -106,7 +106,7 @@ public struct PATCH<T : DataInitializable> : _RequestBuilder {
     
     public typealias ResponseType = T
     
-    private let request: Request
+    fileprivate let request: Request
     
     public init(_ request: Request) {
         var copy = request

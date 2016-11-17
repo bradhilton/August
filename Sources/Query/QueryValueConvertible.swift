@@ -15,7 +15,7 @@ public protocol QueryValueSerializable {
 extension QueryValueSerializable {
     
     public var queryValue: String {
-        return String(self)
+        return String(describing: self)
     }
     
 }
@@ -29,9 +29,9 @@ extension Array : QueryValueSerializable {
             if let element = element as? QueryValueSerializable {
                 return element.queryValue
             } else {
-                return String(element)
+                return String(describing: element)
             }
-        }.joinWithSeparator(",")
+        }.joined(separator: ",")
     }
     
 }

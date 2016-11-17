@@ -1,18 +1,18 @@
 PODS:
-  - Allegro (1.1.1)
-  - AssociatedValues (1.0.3)
-  - Convertible (1.0.9):
-    - Allegro (~> 1.1.0)
+  - AssociatedValues (3.0.0)
+  - Convertible (3.0.0):
+    - Reflection (~> 0.14.2)
+  - Reflection (0.14.2)
 
 DEPENDENCIES:
-  - AssociatedValues (~> 1.0.3)
-  - Convertible (~> 1.0.3)
+  - AssociatedValues (~> 3.0.0)
+  - Convertible (~> 3.0.0)
 
 SPEC CHECKSUMS:
-  Allegro: 7644f86231450631fae8ce6baf2bb1d6f4c8fa22
-  AssociatedValues: 749e05b3df45f80c0ad99c6b15df3a3d53906c9e
-  Convertible: 9e0310d1e450b55eeedcf64ab327750b09aa312d
+  AssociatedValues: 5c29f5c0bb2672cf9ef0394bcbe3ce28b9fa0c2a
+  Convertible: ac0ba82cab283455cef235c8e800dcdbc79ec644
+  Reflection: 057e621ce099cfb569bbd1ecaa84165e9c58e091
 
-PODFILE CHECKSUM: 64688ad8002642124d50ae14172420e479182288
+PODFILE CHECKSUM: 321a7c45e86f20d9fba1f798051e2b4b509feac4
 
-COCOAPODS: 1.0.0.beta.3
+COCOAPODS: 1.1.1

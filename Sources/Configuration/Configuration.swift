@@ -8,13 +8,13 @@
 
 public struct Configuration {
     
-    public enum Type {
-        case Default
-        case Ephemeral
-        private var configuration: NSURLSessionConfiguration {
+    public enum `Type` {
+        case `default`
+        case ephemeral
+        fileprivate var configuration: URLSessionConfiguration {
             switch self {
-            case .Default: return NSURLSessionConfiguration.defaultSessionConfiguration()
-            case .Ephemeral: return NSURLSessionConfiguration.ephemeralSessionConfiguration()
+            case .default: return URLSessionConfiguration.default
+            case .ephemeral: return URLSessionConfiguration.ephemeral
 //            case .Background(identifier: let identifier): return NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(identifier)
             }
         }
@@ -22,30 +22,30 @@ public struct Configuration {
     
     internal let type: Type
 //    public let identifier: String?
-    public var cachePolicy: NSURLRequestCachePolicy
-    public var timeoutInterval: NSTimeInterval
+    public var cachePolicy: URLRequest.CachePolicy
+    public var timeoutInterval: TimeInterval
 //    public var timeoutIntervalForResource: NSTimeInterval
-    public var networkServiceType: NSURLRequestNetworkServiceType
+    public var networkServiceType: URLRequest.NetworkServiceType
     public var allowsCellularAccess: Bool
 //    public var discretionary: Bool
 //    public var sharedContainerIdentifier: String?
 //    public var sessionSendsLaunchEvents: Bool
-    public var connectionProxyDictionary: [NSObject : AnyObject]?
+    public var connectionProxyDictionary: [AnyHashable: Any]?
     public var TLSMinimumSupportedProtocol: SSLProtocol
     public var TLSMaximumSupportedProtocol: SSLProtocol
     public var shouldUsePipelining: Bool
     public var shouldSetCookies: Bool
-    public var cookieAcceptPolicy: NSHTTPCookieAcceptPolicy
+    public var cookieAcceptPolicy: HTTPCookie.AcceptPolicy
     public var additionalHeaders: [String : String]?
     public var maximumConnectionsPerHost: Int
     public var maximumSimultaneousTasks: Int?
-    public var cookieStorage: NSHTTPCookieStorage?
-    public var credentialStorage: NSURLCredentialStorage?
-    public var cache: NSURLCache?
+    public var cookieStorage: HTTPCookieStorage?
+    public var credentialStorage: URLCredentialStorage?
+    public var cache: URLCache?
 //    public var shouldUseExtendedBackgroundIdleMode: Bool
     public var protocolClasses: [AnyClass]?
     
-    public init(_ type: Type = .Default) {
+    public init(_ type: Type = .default) {
         self.type = type
         let configuration = self.type.configuration
 //        identifier = configuration.identifier
@@ -58,27 +58,27 @@ public struct Configuration {
 //        sharedContainerIdentifier = configuration.sharedContainerIdentifier
 //        sessionSendsLaunchEvents = configuration.sessionSendsLaunchEvents
         connectionProxyDictionary = configuration.connectionProxyDictionary
-        TLSMinimumSupportedProtocol = configuration.TLSMinimumSupportedProtocol
-        TLSMaximumSupportedProtocol = configuration.TLSMaximumSupportedProtocol
-        shouldUsePipelining = configuration.HTTPShouldUsePipelining
-        shouldSetCookies = configuration.HTTPShouldSetCookies
-        cookieAcceptPolicy = configuration.HTTPCookieAcceptPolicy
-        additionalHeaders = configuration.HTTPAdditionalHeaders?.reduce([String:String]()) { (dictionary, headers: (key: NSObject, value: AnyObject)) in
+        TLSMinimumSupportedProtocol = configuration.tlsMinimumSupportedProtocol
+        TLSMaximumSupportedProtocol = configuration.tlsMaximumSupportedProtocol
+        shouldUsePipelining = configuration.httpShouldUsePipelining
+        shouldSetCookies = configuration.httpShouldSetCookies
+        cookieAcceptPolicy = configuration.httpCookieAcceptPolicy
+        additionalHeaders = configuration.httpAdditionalHeaders?.reduce([String:String]()) { (dictionary, headers: (key: AnyHashable, value: Any)) in
             var copy = dictionary
             if let key = headers.key as? String {
                 copy[key] = headers.value as? String
             }
             return copy
         }
-        maximumConnectionsPerHost = configuration.HTTPMaximumConnectionsPerHost
-        cookieStorage = configuration.HTTPCookieStorage
-        credentialStorage = configuration.URLCredentialStorage
-        cache = configuration.URLCache
+        maximumConnectionsPerHost = configuration.httpMaximumConnectionsPerHost
+        cookieStorage = configuration.httpCookieStorage
+        credentialStorage = configuration.urlCredentialStorage
+        cache = configuration.urlCache
 //        shouldUseExtendedBackgroundIdleMode = configuration.shouldUseExtendedBackgroundIdleMode
         protocolClasses = configuration.protocolClasses
     }
     
-    internal var foundationConfiguration: NSURLSessionConfiguration {
+    internal var foundationConfiguration: URLSessionConfiguration {
         let configuration = type.configuration
         configuration.requestCachePolicy = cachePolicy
         configuration.timeoutIntervalForRequest = timeoutInterval
@@ -89,16 +89,16 @@ public struct Configuration {
 //        configuration.sharedContainerIdentifier = sharedContainerIdentifier
 //        configuration.sessionSendsLaunchEvents = sessionSendsLaunchEvents
         configuration.connectionProxyDictionary = connectionProxyDictionary
-        configuration.TLSMinimumSupportedProtocol = TLSMinimumSupportedProtocol
-        configuration.TLSMaximumSupportedProtocol = TLSMaximumSupportedProtocol
-        configuration.HTTPShouldUsePipelining = shouldUsePipelining
-        configuration.HTTPShouldSetCookies = shouldSetCookies
-        configuration.HTTPCookieAcceptPolicy = cookieAcceptPolicy
-        configuration.HTTPAdditionalHeaders = additionalHeaders?.reduce([NSObject:AnyObject]()) { var headers = $0; headers[$1.0] = $1.1; return headers }
-        configuration.HTTPMaximumConnectionsPerHost = maximumConnectionsPerHost
-        configuration.HTTPCookieStorage = cookieStorage
-        configuration.URLCredentialStorage = credentialStorage
-        configuration.URLCache = cache
+        configuration.tlsMinimumSupportedProtocol = TLSMinimumSupportedProtocol
+        configuration.tlsMaximumSupportedProtocol = TLSMaximumSupportedProtocol
+        configuration.httpShouldUsePipelining = shouldUsePipelining
+        configuration.httpShouldSetCookies = shouldSetCookies
+        configuration.httpCookieAcceptPolicy = cookieAcceptPolicy
+        configuration.httpAdditionalHeaders = additionalHeaders?.reduce([String:String]()) { var headers = $0; headers[$1.0] = $1.1; return headers }
+        configuration.httpMaximumConnectionsPerHost = maximumConnectionsPerHost
+        configuration.httpCookieStorage = cookieStorage
+        configuration.urlCredentialStorage = credentialStorage
+        configuration.urlCache = cache
 //        configuration.shouldUseExtendedBackgroundIdleMode = shouldUseExtendedBackgroundIdleMode
         configuration.protocolClasses = protocolClasses
         return configuration

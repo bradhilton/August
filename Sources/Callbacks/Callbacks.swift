@@ -6,23 +6,24 @@
 //  Copyright © 2016 Brad Hilton. All rights reserved.
 //
 
-public typealias StartCallback = (task: Task) -> Void
-public typealias ProgressCallback = (task: Task) -> Void
-public typealias FailureCallback = (error: ErrorType, request: Request) -> Void
-public typealias CompletionCallback = (response: Response<NSData>?, errors: [ErrorType], request: Request) -> Void
+public typealias ChallengeCallback = (_ challenge: URLAuthenticationChallenge) -> (URLSession.AuthChallengeDisposition, URLCredential?)
+public typealias StartCallback = (_ task: Task) -> Void
+public typealias ProgressCallback = (_ task: Task) -> Void
+public typealias FailureCallback = (_ error: Error, _ request: Request) -> Void
+public typealias CompletionCallback = (_ response: Response<Data>?, _ errors: [Error], _ request: Request) -> Void
 
 internal struct ErrorCallback {
     
-    let callback: (error: ErrorType, request: Request) -> Void
+    let callback: (_ error: Error, _ request: Request) -> Void
     
-    init(callback: (error: ErrorType, request: Request) -> Void) {
+    init(callback: @escaping (_ error: Error, _ request: Request) -> Void) {
         self.callback = callback
     }
     
-    init<T : ErrorType>(callback: (error: T, request: Request) -> Void) {
+    init<T : Error>(callback: @escaping (_ error: T, _ request: Request) -> Void) {
         self.callback = { (error, request) in
             if let error = error as? T {
-                callback(error: error, request: request)
+                callback(error, request)
             }
         }
     }
@@ -30,15 +31,15 @@ internal struct ErrorCallback {
 }
 
 protocol ReponseCallbackProtocol {
-    var callback: (response: Response<NSData>, queue: NSOperationQueue) throws -> Void { get }
-    init(callback: (response: Response<NSData>, queue: NSOperationQueue) throws -> Void)
+    var callback: (_ response: Response<Data>, _ queue: OperationQueue) throws -> Void { get }
+    init(callback: (_ response: Response<Data>, _ queue: OperationQueue) throws -> Void)
 }
 
 internal struct ResponseCallback {
     
-    let callback: (response: Response<NSData>, queue: NSOperationQueue) throws -> Void
+    let callback: (_ response: Response<Data>, _ queue: OperationQueue) throws -> Void
     
-    init<T : DataInitializable>(responseCodes: Set<Int>, callback: (response: Response<T>) -> Void) {
+    init<T : DataInitializable>(responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
         self.callback = responseCallback(successCallback: false, responseCodes: responseCodes, callback: callback)
     }
     
@@ -46,19 +47,19 @@ internal struct ResponseCallback {
 
 internal struct SuccessCallback {
     
-    let callback: (response: Response<NSData>, queue: NSOperationQueue) throws -> Void
+    let callback: (_ response: Response<Data>, _ queue: OperationQueue) throws -> Void
     
-    init<T : DataInitializable>(responseCodes: Set<Int>, callback: (response: Response<T>) -> Void) {
+    init<T : DataInitializable>(responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
         self.callback = responseCallback(successCallback: true, responseCodes: responseCodes, callback: callback)
     }
     
 }
 
 private func responseCallback<T : DataInitializable>(
-    successCallback successCallback: Bool,
+    successCallback: Bool,
     responseCodes: Set<Int>,
-    callback: (response: Response<T>) -> Void)
-    -> (response: Response<NSData>, queue: NSOperationQueue) throws -> Void
+    callback: @escaping (_ response: Response<T>) -> Void)
+    -> (_ response: Response<Data>, _ queue: OperationQueue) throws -> Void
 {
     return { (response, queue) in
         guard responseCodes.contains(response.statusCode) else {
@@ -68,8 +69,8 @@ private func responseCallback<T : DataInitializable>(
             return
         }
         let newResponse = try Response<T>(response)
-        queue.addOperationWithBlock {
-            callback(response: newResponse)
+        queue.addOperation {
+            callback(newResponse)
         }
     }
 }

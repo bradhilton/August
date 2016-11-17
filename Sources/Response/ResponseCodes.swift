@@ -12,10 +12,10 @@ public protocol ResponseCodes {
     
 }
 
-extension Range : ResponseCodes {
+extension CountableRange : ResponseCodes {
     
     public var responseCodes: Set<Int> {
-        guard Element.self is Int.Type else { return Set<Int>() }
+        guard Bound.self is Int.Type else { return Set<Int>() }
         return reduce(Set()) { $0.0.union([$0.1 as! Int]) }
     }
     

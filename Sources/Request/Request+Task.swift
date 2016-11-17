@@ -8,24 +8,24 @@
 
 extension Request {
     
-    private func foundationRequest() throws -> NSURLRequest {
-        let request = NSMutableURLRequest()
-        request.URL = NSURL(url)
+    fileprivate func foundationRequest() throws -> URLRequest {
+        guard let url = URL(self.url) else { throw UnknownError(description: "Invalid URL") }
+        var request = URLRequest(url: url)
         request.cachePolicy = cachePolicy
         request.timeoutInterval = timeoutInterval
-        request.mainDocumentURL = mainDocumentURL != nil ? NSURL(mainDocumentURL!) : nil
+        request.mainDocumentURL = mainDocumentURL != nil ? URL(mainDocumentURL!) : nil
         request.networkServiceType = networkServiceType
         request.allowsCellularAccess = allowsCellularAccess
-        request.HTTPMethod = method.rawValue
+        request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
-        request.HTTPBody = try body?.serializeToDataWithOptions(options)
-        request.HTTPShouldHandleCookies = shouldHandleCookies
-        request.HTTPShouldUsePipelining = shouldUsePipelining
+        request.httpBody = try body?.serializeToDataWithOptions(options)
+        request.httpShouldHandleCookies = shouldHandleCookies
+        request.httpShouldUsePipelining = shouldUsePipelining
         return request
     }
     
-    internal func task() throws -> NSURLSessionTask {
-        return session.session.dataTaskWithRequest(try foundationRequest())
+    internal func task() throws -> URLSessionTask {
+        return session.session.dataTask(with: try foundationRequest())
     }
     
 }

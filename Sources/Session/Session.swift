@@ -6,46 +6,71 @@
 //  Copyright © 2016 Brad Hilton. All rights reserved.
 //
 
-public class Session {
+import AssociatedValues
+
+let augustQueue = OperationQueue()
+
+open class Session {
     
-    public static let sharedSession = Session()
+    open static let sharedSession = Session()
     
-    internal let session: NSURLSession
+    internal let session: URLSession
     internal let maximumSimultaneousTasks: Int?
     internal var tasks: [Task] = [] {
         didSet {
-            tasks = tasks.filter { $0.state == .Suspended || $0.state == .Running }
-            if let maximumSimultaneousTasks = maximumSimultaneousTasks where tasks.count > maximumSimultaneousTasks {
-                for (index, task) in tasks.enumerate() where index < maximumSimultaneousTasks && task.state == .Suspended {
+            tasks = tasks.filter { $0.state != .completed }
+            if let maximumSimultaneousTasks = maximumSimultaneousTasks, tasks.count > maximumSimultaneousTasks {
+                for (index, task) in tasks.enumerated() where index < maximumSimultaneousTasks && task.state == .suspended {
                     task.resume()
                 }
             } else {
-                for task in tasks where task.state == .Suspended {
+                for task in tasks where task.state == .suspended {
                     task.resume()
                 }
             }
         }
     }
+
     
-    public init(configuration: Configuration = Configuration(.Default)) {
+    public init(configuration: Configuration = Configuration(.default)) {
         self.maximumSimultaneousTasks = configuration.maximumSimultaneousTasks
-        self.session = NSURLSession(configuration: configuration.foundationConfiguration, delegate: SessionDelegate(), delegateQueue: NSOperationQueue())
+        self.session = URLSession(configuration: configuration.foundationConfiguration, delegate: SessionDelegate(), delegateQueue: augustQueue)
+        self.session.parent = self
     }
     
-    public func finishTasksAndInvalidate() {
+    open func finishTasksAndInvalidate() {
         session.finishTasksAndInvalidate()
     }
 
-    public func invalidateAndCancel() {
+    open func invalidateAndCancel() {
         session.invalidateAndCancel()
     }
     
-    public func reset() {
-        session.resetWithCompletionHandler({})
+    open func reset() {
+        session.reset(completionHandler: {})
     }
     
-    public func flush() {
-        session.flushWithCompletionHandler({})
+    open func flush() {
+        session.flush(completionHandler: {})
+    }
+
+    internal var challengeCallback: ChallengeCallback?
+    
+    open func challenge(callback: ChallengeCallback?) -> Void {
+        challengeCallback = callback
+    }
+    
+}
+
+extension URLSession {
+    
+    weak var parent: Session? {
+        get {
+            return getAssociatedValue(key: "parent", object: self)
+        }
+        set {
+            set(weakAssociatedValue: newValue, key: "parent", object: self)
+        }
     }
     
 }

@@ -8,22 +8,22 @@
 
 extension Request {
     
-    internal func reportStart(task: Task) {
-        queue.addOperationWithBlock {
-            self.startCallbacks.forEach { $0(task: task) }
+    internal func reportStart(_ task: Task) {
+        queue.addOperation {
+            self.startCallbacks.forEach { $0(task) }
         }
     }
     
-    internal func reportProgress(task: Task) {
-        queue.addOperationWithBlock {
-            self.progressCallbacks.forEach { $0(task: task) }
+    internal func reportProgress(_ task: Task) {
+        queue.addOperation {
+            self.progressCallbacks.forEach { $0(task) }
         }
     }
     
-    internal func reportResponse(response: Response<NSData>) -> [ErrorType] {
-        return self.responseCallbacks.reduce([ErrorType]()) { (errors, callback) in
+    internal func reportResponse(_ response: Response<Data>) -> [Error] {
+        return self.responseCallbacks.reduce([Error]()) { (errors, callback) in
             do {
-                try callback.callback(response: response, queue: self.queue)
+                try callback.callback(response, self.queue)
                 return errors
             } catch {
                 return errors + [error]
@@ -31,25 +31,25 @@ extension Request {
         }
     }
     
-    internal func reportSuccess(response: Response<NSData>) throws {
-        try successCallback?.callback(response: response, queue: queue)
+    internal func reportSuccess(_ response: Response<Data>) throws {
+        try successCallback?.callback(response, queue)
     }
     
-    internal func reportFailure(error: ErrorType, request: Request) {
-        queue.addOperationWithBlock {
-            self.failureCallback?(error: error, request: request)
+    internal func reportFailure(_ error: Error, request: Request) {
+        queue.addOperation {
+            self.failureCallback?(error, request)
         }
     }
     
-    internal func reportError(error: ErrorType, request: Request) {
-        queue.addOperationWithBlock {
-            self.errorCallbacks.forEach { $0.callback(error: error, request: request) }
+    internal func reportError(_ error: Error, request: Request) {
+        queue.addOperation {
+            self.errorCallbacks.forEach { $0.callback(error, request) }
         }
     }
     
-    internal func reportCompletion(response: Response<NSData>?, errors: [ErrorType], request: Request) {
-        queue.addOperationWithBlock {
-            self.completionCallbacks.forEach { $0(response: response, errors: errors, request: request) }
+    internal func reportCompletion(_ response: Response<Data>?, errors: [Error], request: Request) {
+        queue.addOperation {
+            self.completionCallbacks.forEach { $0(response, errors, request) }
         }
     }
     

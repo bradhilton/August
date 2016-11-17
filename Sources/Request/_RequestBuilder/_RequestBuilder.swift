@@ -26,80 +26,85 @@ extension _RequestBuilder {
         self.init(Request(string))
     }
     
-    public init<T : DataInitializable, U : _RequestBuilder where U.ResponseType == T>(_ builder: U) {
+    public init<T : DataInitializable, U : _RequestBuilder>(_ builder: U) where U.ResponseType == T {
         self.init(builder.create())
     }
     
-    public func modify(handler: (inout Request) -> ()) -> Self {
+    public func modify(_ handler: (inout Request) -> ()) -> Self {
         var request = self.create()
         handler(&request)
         return Self(request)
     }
     
-    public func url(url: Url) -> Self {
-        return modify { (inout request: Request) in request.url = url }
+    public func url(_ url: Url) -> Self {
+        return modify { (request: inout Request) in request.url = url }
     }
     
-    public func cachePolicy(cachePolicy: NSURLRequestCachePolicy) -> Self {
-        return modify { (inout request: Request) in request.cachePolicy = cachePolicy }
+    public func cachePolicy(_ cachePolicy: URLRequest.CachePolicy) -> Self {
+        return modify { (request: inout Request) in request.cachePolicy = cachePolicy }
     }
     
-    public func timeoutInterval(timeoutInterval: NSTimeInterval) -> Self {
-        return modify { (inout request: Request) in request.timeoutInterval = timeoutInterval }
+    public func timeoutInterval(_ timeoutInterval: TimeInterval) -> Self {
+        return modify { (request: inout Request) in request.timeoutInterval = timeoutInterval }
     }
     
-    public func mainDocumentUrl(url: Url?) -> Self {
-        return modify { (inout request: Request) in request.mainDocumentURL = url }
+    public func mainDocumentUrl(_ url: Url?) -> Self {
+        return modify { (request: inout Request) in request.mainDocumentURL = url }
     }
     
-    public func networkServiceType(networkServiceType: NSURLRequestNetworkServiceType) -> Self {
-        return modify { (inout request: Request) in request.networkServiceType = networkServiceType }
+    public func networkServiceType(_ networkServiceType: URLRequest.NetworkServiceType) -> Self {
+        return modify { (request: inout Request) in request.networkServiceType = networkServiceType }
     }
     
-    public func allowsCellularAccess(allowsCellularAccess: Bool) -> Self {
-        return modify { (inout request: Request) in request.allowsCellularAccess = allowsCellularAccess }
+    public func allowsCellularAccess(_ allowsCellularAccess: Bool) -> Self {
+        return modify { (request: inout Request) in request.allowsCellularAccess = allowsCellularAccess }
     }
     
-    public func headers(headers: [String : String]?) -> Self {
-        return modify { (inout request: Request) in request.headers = headers ?? [:] }
+    public func headers(_ headers: [String : String]?) -> Self {
+        return modify { (request: inout Request) in request.headers = headers ?? [:] }
     }
     
-    public func shouldHandleCookies(shouldHandleCookies: Bool) -> Self {
-        return modify { (inout request: Request) in request.shouldHandleCookies = shouldHandleCookies }
+    public func shouldHandleCookies(_ shouldHandleCookies: Bool) -> Self {
+        return modify { (request: inout Request) in request.shouldHandleCookies = shouldHandleCookies }
     }
     
-    public func shouldUsePipelining(shouldUsePipelining: Bool) -> Self {
-        return modify { (inout request: Request) in request.shouldUsePipelining = shouldUsePipelining }
+    public func shouldUsePipelining(_ shouldUsePipelining: Bool) -> Self {
+        return modify { (request: inout Request) in request.shouldUsePipelining = shouldUsePipelining }
     }
     
-    public func appendHeaders(headers: [String : String?]) -> Self {
-        return modify { (inout request: Request) in
+    public func appendHeaders(_ headers: [String : String?]) -> Self {
+        return modify { (request: inout Request) in
             for (field, value) in headers {
                 request.headers[field] = value
             }
         }
     }
     
-    public func body(body: DataSerializable?) -> Self {
-        return modify { (inout request: Request) in request.body = body }
+    public func body(_ body: DataSerializable?) -> Self {
+        return modify { (request: inout Request) in request.body = body }
     }
     
-    public func session(session: Session) -> Self {
-        return modify { (inout request: Request) in request.session = session }
+    public func session(_ session: Session) -> Self {
+        return modify { (request: inout Request) in request.session = session }
     }
     
-    public func queue(queue: NSOperationQueue) -> Self {
-        return modify { (inout request: Request) in request.queue = queue }
+    public func options(_ options: [ConvertibleOption]) -> Self {
+        return modify { (request: inout Request) in request.options = options }
     }
     
-    public func options(options: [ConvertibleOption]) -> Self {
-        return modify { (inout request: Request) in request.options = options }
+    public func logging(_ logging: Bool) -> Self {
+        return modify { (request: inout Request) in request.logging = logging }
     }
     
-    public func logging(logging: Bool) -> Self {
-        return modify { (inout request: Request) in request.logging = logging }
+    public func delay(_ delay: TimeInterval) -> Self {
+        return modify { (request: inout Request) in request.delay = delay }
     }
     
+    public func queue(_ queue: OperationQueue) -> Self {
+        return modify { (request: inout Request) in request.queue = queue }
+    }
+    
+    @discardableResult
     public func begin() -> Task {
         return create().begin()
     }

@@ -1,7 +1,6 @@
-use_frameworks!
-
 target 'August' do
+    use_frameworks!
     podspec
-    target 'AugustTests'
+    target 'AugustTests' do
+    end
 end
-

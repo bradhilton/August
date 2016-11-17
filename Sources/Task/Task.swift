@@ -8,76 +8,83 @@
 
 import AssociatedValues
 
-public class Task : Equatable {
+open class Task : Equatable {
     
-    public internal(set) var request: Request
-    var task: NSURLSessionTask?
-    let body = NSMutableData()
-    var errors = [ErrorType]()
-    var timer = Timer()
+    open internal(set) var request: Request
+    var task: URLSessionTask?
+    var body = Data()
+    var errors = [Error]()
+    var timer = August.Timer()
 
     init(request: Request) {
         self.request = request
-        do {
-            self.task = try request.task()
-            self.task?.parent = self
-            request.session.tasks.append(self)
-        } catch {
-            start()
-            handleError(error)
-            complete(nil)
+        augustQueue.addOperation {
+            do {
+                self.task = try self.request.task()
+                self.task?.parent = self
+                self.request.session.tasks.append(self)
+            } catch {
+                self.start()
+                self.handleError(error)
+                self.complete(nil)
+            }
         }
     }
     
     func start() {
+        request.log()
         request.reportStart(self)
         request.reportProgress(self)
     }
     
-    func handleError(error: ErrorType) {
+    func handleError(_ error: Error) {
         errors.append(error)
         request.reportFailure(error, request: request)
         request.failureCallback = nil
         request.reportError(error, request: request)
     }
     
-    func complete(response: Response<NSData>?) {
+    func complete(_ response: Response<Data>?) {
         if let response = response {
             for error in request.reportResponse(response) {
                 handleError(error)
             }
         }
         request.reportCompletion(response, errors: errors, request: request)
-        if let index = request.session.tasks.indexOf(self) {
-            request.session.tasks.removeAtIndex(index)
+    }
+    
+    open internal(set) var sent = 0.0 { didSet { if oldValue != sent { request.reportProgress(self) } } }
+    open internal(set) var received = 0.0 { didSet { if oldValue != received { request.reportProgress(self) } } }
+    
+    open var state: URLSessionTask.State {
+        return task?.state ?? .completed
+    }
+    
+    open func cancel() {
+        augustQueue.addOperation {
+            self.task?.cancel()
         }
     }
     
-    public internal(set) var sent = 0.0 { didSet { if oldValue != sent { request.reportProgress(self) } } }
-    public internal(set) var received = 0.0 { didSet { if oldValue != received { request.reportProgress(self) } } }
-    
-    public var state: NSURLSessionTaskState {
-        return task?.state ?? .Completed
-    }
-    
-    public func cancel() {
-        task?.cancel()
-    }
-    
-    public func suspend() {
-        timer.suspend()
-        task?.suspend()
+    open func suspend() {
+        augustQueue.addOperation {
+            self.timer.suspend()
+            self.task?.suspend()
+        }
     }
     
     private var started = false
     
-    public func resume() {
-        if !started {
-            started = true
-            start()
+    open func resume() {
+        augustQueue.addOperation {
+            self.timer.resume()
+            guard !self.started else { self.task?.resume(); return }
+            self.started = true
+            self.start()
+            if self.state == .suspended {
+                self.task?.resume()
+            }
         }
-        timer.resume()
-        task?.resume()
     }
     
 }
@@ -86,14 +93,14 @@ public func ==(lhs: Task, rhs: Task) -> Bool {
     return lhs === rhs
 }
 
-extension NSURLSessionTask {
+extension URLSessionTask {
     
     weak var parent: Task? {
         get {
-            return getAssociatedValueForProperty("parent", ofObject: self)
+            return getAssociatedValue(key: "parent", object: self)
         }
         set {
-            setWeakAssociatedValue(newValue, forProperty: "parent", ofObject: self)
+            set(weakAssociatedValue: newValue, key: "parent", object: self)
         }
     }
     

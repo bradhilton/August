@@ -10,16 +10,16 @@ public struct Response<Body : DataInitializable> {
     
     public let request: Request
     public let body: Body
-    public let responseTime: NSTimeInterval
-    internal let data: NSData
-    internal let response: NSHTTPURLResponse
+    public let responseTime: TimeInterval
+    internal let data: Data
+    internal let response: HTTPURLResponse
     
     public var statusCode: Int {
         return response.statusCode
     }
     
     public var statusMessage: String {
-        return NSHTTPURLResponse.localizedStringForStatusCode(statusCode)
+        return HTTPURLResponse.localizedString(forStatusCode: statusCode)
     }
     
     public var headers: [String : String] {
@@ -34,13 +34,9 @@ public struct Response<Body : DataInitializable> {
         self.response = response.response
     }
     
-}
-
-extension Response where Body : NSData {
-    
-    internal init(task: Task, response: NSHTTPURLResponse) {
+    init(task: Task, response: HTTPURLResponse) {
         self.request = task.request
-        self.body = task.body as? Body ?? Body()
+        self.body = task.body as! Body
         self.responseTime = task.timer.time
         self.data = task.body
         self.response = response

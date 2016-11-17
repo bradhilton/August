@@ -8,58 +8,58 @@
 
 extension _RequestBuilder {
     
-    public func success<T>(codes: ResponseCodes..., callback: ((response: Response<T>) -> Void)?) -> Self {
-        return modify { (inout request: Request) in
+    public func success<T>(_ codes: ResponseCodes..., callback: ((_ response: Response<T>) -> Void)?) -> Self {
+        return modify { (request: inout Request) in
             request.success(reduceSuccessCodes(codes), callback: callback)
         }
     }
     
-    public func success(codes: ResponseCodes..., callback: ((response: Response<ResponseType>) -> Void)?) -> Self {
-        return modify { (inout request: Request) in
+    public func success(_ codes: ResponseCodes..., callback: ((_ response: Response<ResponseType>) -> Void)?) -> Self {
+        return modify { (request: inout Request) in
             request.success(reduceSuccessCodes(codes), callback: callback)
         }
     }
     
-    public func failure(callback callback: FailureCallback?) -> Self {
-        return modify { (inout request: Request) in request.failure(callback: callback) }
+    public func failure(callback: FailureCallback?) -> Self {
+        return modify { (request: inout Request) in request.failure(callback: callback) }
     }
     
-    public func response<T>(codes: ResponseCodes..., callback: (response: Response<T>) -> Void) -> Self {
-        return modify { (inout request: Request) in request.response(reduceResponseCodes(codes), callback: callback) }
+    public func response<T>(_ codes: ResponseCodes..., callback: @escaping (_ response: Response<T>) -> Void) -> Self {
+        return modify { (request: inout Request) in request.addResponse(reduceResponseCodes(codes), callback: callback) }
     }
     
-    public func response(codes: ResponseCodes..., callback: (response: Response<NSData>) -> Void) -> Self {
-        return modify { (inout request: Request) in
-            request.response(reduceResponseCodes(codes), callback: callback)
+    public func response(_ codes: ResponseCodes..., callback: @escaping (_ response: Response<Data>) -> Void) -> Self {
+        return modify { (request: inout Request) in
+            request.addResponse(reduceResponseCodes(codes), callback: callback)
         }
     }
     
-    public func start(callback callback: StartCallback) -> Self {
-        return modify { (inout request: Request) in
+    public func start(callback: @escaping StartCallback) -> Self {
+        return modify { (request: inout Request) in
             request.start(callback: callback)
         }
     }
 
-    public func progress(callback callback: ProgressCallback) -> Self {
-        return modify { (inout request: Request) in
+    public func progress(callback: @escaping ProgressCallback) -> Self {
+        return modify { (request: inout Request) in
             request.progress(callback: callback)
         }
     }
     
-    public func completion(callback callback: CompletionCallback) -> Self {
-        return modify { (inout request: Request) in
+    public func completion(callback: @escaping CompletionCallback) -> Self {
+        return modify { (request: inout Request) in
             request.completion(callback: callback)
         }
     }
     
-    public func error(callback callback: (error: ErrorType, request: Request) -> Void) -> Self {
-        return modify { (inout request: Request) in
+    public func error(callback: @escaping (_ error: Error, _ request: Request) -> Void) -> Self {
+        return modify { (request: inout Request) in
             request.error(callback: callback)
         }
     }
     
-    public func error<T : ErrorType>(callback callback: (error: T, request: Request) -> Void) -> Self {
-        return modify { (inout request: Request) in
+    public func error<T : Error>(callback: @escaping (_ error: T, _ request: Request) -> Void) -> Self {
+        return modify { (request: inout Request) in
             request.error(callback: callback)
         }
     }

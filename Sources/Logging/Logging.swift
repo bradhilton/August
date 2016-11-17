@@ -16,7 +16,7 @@ extension Request : CustomDebugStringConvertible {
                 return description + "{ ERROR: Unable to serialize data } \n---> END"
             }
             addData(&description, data: data)
-            return description + "\n---> END (\(data.length) bytes)"
+            return description + "\n---> END (\(data.count) bytes)"
         } else {
             return description + "---> END (0 bytes)"
         }
@@ -34,7 +34,7 @@ extension Response : CustomDebugStringConvertible {
         var description = "<--- \(request.method) \(request.url) (\(statusCode) \(statusMessage), \(NSString(format: "%0.2fs", responseTime)))\n"
         addHeaders(&description, headers: headers)
         addData(&description, data: data)
-        return description + "\n<--- END (\(data.length) bytes)"
+        return description + "\n<--- END (\(data.count) bytes)"
     }
     
     internal func log() {
@@ -43,19 +43,20 @@ extension Response : CustomDebugStringConvertible {
     
 }
 
-private func addHeaders(inout description: String, headers: [String : String]) {
+private func addHeaders(_ description: inout String, headers: [String : String]) {
     for (field, value) in headers {
         description += "\(field): \(value)\n"
     }
 }
 
-private func addData(inout description: String, data: NSData) {
-    if let string = String(data: data, encoding: NSUTF8StringEncoding) where string.characters.count > 0 {
+private func addData(_ description: inout String, data: Data) {
+    if let string = String(data: data, encoding: String.Encoding.utf8) {
         description += string
     }
 }
 
-private func backgroundDebugPrint<T>(value: T) {
-    NSOperationQueue().addOperationWithBlock { debugPrint(value) }
-}
+private let loggingQueue = OperationQueue()
 
+private func backgroundDebugPrint<T>(_ value: T) {
+    loggingQueue.addOperation { debugPrint(value) }
+}

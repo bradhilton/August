@@ -6,7 +6,7 @@
 //  Copyright © 2016 Brad Hilton. All rights reserved.
 //
 
-public struct QueryItems : DictionaryLiteralConvertible {
+public struct QueryItems : ExpressibleByDictionaryLiteral {
     
     internal var items: [QueryItem]
     

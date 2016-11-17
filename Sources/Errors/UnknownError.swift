@@ -6,7 +6,7 @@
 //  Copyright © 2016 Brad Hilton. All rights reserved.
 //
 
-public struct UnknownError : ErrorType, CustomStringConvertible {
+public struct UnknownError : Error, CustomStringConvertible {
     
     public let description: String
     

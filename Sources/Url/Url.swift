@@ -8,17 +8,17 @@
 
 public struct Url {
     
-    var components: NSURLComponents {
-        return NSURLComponents(string: string) ?? NSURLComponents()
+    var components: URLComponents {
+        return URLComponents(string: string) ?? URLComponents()
     }
     
-    mutating func modifyComponents(handler: (NSURLComponents) -> Void) {
-        let components = self.components
-        handler(components)
+    mutating func modifyComponents(_ handler: (inout URLComponents) -> Void) {
+        var components = self.components
+        handler(&components)
         string = components.string ?? string
     }
     
-    private var string: String
+    fileprivate var string: String
     
     public var scheme: String? {
         get {
@@ -58,14 +58,14 @@ public struct Url {
     
     public var port: Int? {
         get {
-            return components.port?.integerValue
+            return components.port
         }
         set {
-            modifyComponents { $0.port = newValue != nil ? NSNumber(integer: newValue!) : nil }
+            modifyComponents { $0.port = newValue }
         }
     }
     
-    public var path: String? {
+    public var path: String {
         get {
             return components.path
         }
@@ -89,7 +89,7 @@ public struct Url {
         }
         set {
             modifyComponents { components in
-                components.queryItems = newValue?.map { NSURLQueryItem(name: $0.name, value: $0.value?.queryValue) }
+                components.queryItems = newValue?.map { (URLQueryItem(name: $0.name, value: $0.value?.queryValue)) }
             }
         }
     }
@@ -109,7 +109,7 @@ public struct Url {
     
 }
 
-extension Url : StringLiteralConvertible {
+extension Url : ExpressibleByStringLiteral {
     
     public init(unicodeScalarLiteral value: String) {
         self.string = value
@@ -133,9 +133,15 @@ extension Url : CustomStringConvertible {
     
 }
 
-extension NSURL {
+extension Url : Equatable {}
+
+public func ==(lhs: Url, rhs: Url) -> Bool {
+    return lhs.string == rhs.string
+}
+
+extension URL {
     
-    internal convenience init?(_ url: Url) {
+    internal init?(_ url: Url) {
         self.init(string: url.string)
     }
     

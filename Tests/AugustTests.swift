@@ -17,10 +17,10 @@ struct User : Convertible {
 class AugustTests: XCTestCase {
     
     func testRequestBuilder() {
-        let startExpectation = self.expectationWithDescription("Start")
-        let successExpectation = self.expectationWithDescription("Success")
-        let responseExpecation = self.expectationWithDescription("Response")
-        let completionExpectation = self.expectationWithDescription("Completion")
+        let startExpectation = self.expectation(description: "Start")
+        let successExpectation = self.expectation(description: "Success")
+        let responseExpecation = self.expectation(description: "Response")
+        let completionExpectation = self.expectation(description: "Completion")
         var (_sent, _received) = (-1.0, -1.0)
         POST<User>("http://jsonplaceholder.typicode.com/")
             .headers(["Content-Type":"application/json"])
@@ -43,7 +43,7 @@ class AugustTests: XCTestCase {
                 completionExpectation.fulfill()
                 XCTAssert((_sent, _received) == (1.0, 1.0))
             }.logging(true).begin()
-        waitForExpectationsWithTimeout(100, handler: nil)
+        waitForExpectations(timeout: 100, handler: nil)
     }
     
 }

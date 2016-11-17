@@ -11,21 +11,21 @@ private let request = NSURLRequest()
 public struct Request {
     
     public var url: Url = Url()
-    public var cachePolicy: NSURLRequestCachePolicy = request.cachePolicy
-    public var timeoutInterval: NSTimeInterval = request.timeoutInterval
+    public var cachePolicy: NSURLRequest.CachePolicy = request.cachePolicy
+    public var timeoutInterval: TimeInterval = request.timeoutInterval
     public var mainDocumentURL: Url?
-    public var networkServiceType: NSURLRequestNetworkServiceType = request.networkServiceType
+    public var networkServiceType: NSURLRequest.NetworkServiceType = request.networkServiceType
     public var allowsCellularAccess: Bool = request.allowsCellularAccess
     public var method: Method = .GET
     public var headers: [String : String] = [:]
     public var body: DataSerializable?
-    public var shouldHandleCookies = request.HTTPShouldHandleCookies
-    public var shouldUsePipelining = request.HTTPShouldUsePipelining
+    public var shouldHandleCookies = request.httpShouldHandleCookies
+    public var shouldUsePipelining = request.httpShouldUsePipelining
     public var session: Session = .sharedSession
     public var options = [ConvertibleOption]()
     public var logging = false
-    
-    public var queue = NSOperationQueue.mainQueue()
+    public var delay: TimeInterval = 0
+    public var queue = OperationQueue.main
     internal var startCallbacks = [StartCallback]()
     internal var progressCallbacks = [ProgressCallback]()
     internal var responseCallbacks = [ResponseCallback]()

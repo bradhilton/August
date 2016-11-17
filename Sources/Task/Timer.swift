@@ -7,18 +7,17 @@
 //
 
 struct Timer {
-    
-    var time: NSTimeInterval {
+
+    var time: TimeInterval {
         guard let timestamp = timestamp else { return allotedTime }
-        return allotedTime + NSDate().timeIntervalSinceDate(timestamp)
+        return allotedTime + Date().timeIntervalSince(timestamp)
     }
     
-    private var allotedTime: NSTimeInterval = 0
-    private var timestamp: NSDate?
+    var allotedTime: TimeInterval = 0
+    var timestamp: Date?
     
     mutating func resume() {
-        guard timestamp == nil else { return }
-        timestamp = NSDate()
+        timestamp = timestamp ?? Date()
     }
     
     mutating func suspend() {
