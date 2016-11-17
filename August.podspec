@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source_files  = "Sources", "Sources/**/*.{swift,h,m}"
   s.requires_arc = true
 
-  s.dependency 'Convertible', '~> 3.0.0'
-  s.dependency 'AssociatedValues', '~> 3.0.0'
+  s.dependency 'Convertible', '~>3.0.0'
+  s.dependency 'AssociatedValues', '~>3.0.0'
 
 end

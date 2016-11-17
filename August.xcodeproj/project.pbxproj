@@ -63,7 +63,7 @@
 		A2CD54751CEBFBF9000FF02B /* AugustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AugustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CD547A1CEBFBF9000FF02B /* AugustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugustTests.swift; sourceTree = "<group>"; };
 		A2CD547C1CEBFBF9000FF02B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2CD54851CEC0B31000FF02B /* August.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = August.podspec; sourceTree = "<group>"; };
+		A2CD54851CEC0B31000FF02B /* August.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = August.podspec; sourceTree = "<group>"; };
 		A2CD54E51CECB5D8000FF02B /* Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
 		A2CD54E71CECB5D8000FF02B /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A2CD54ED1CECB5EA000FF02B /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
