@@ -26,7 +26,7 @@ extension _RequestBuilder {
         self.init(Request(string))
     }
     
-    public init<T : DataInitializable, U : _RequestBuilder>(_ builder: U) where U.ResponseType == T {
+    public init<T, U : _RequestBuilder>(_ builder: U) where U.ResponseType == T {
         self.init(builder.create())
     }
     

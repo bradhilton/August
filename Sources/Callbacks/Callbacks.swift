@@ -39,7 +39,7 @@ internal struct ResponseCallback {
     
     let callback: (_ response: Response<Data>, _ queue: OperationQueue) throws -> Void
     
-    init<T : DataInitializable>(responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
+    init<T>(responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
         self.callback = responseCallback(successCallback: false, responseCodes: responseCodes, callback: callback)
     }
     
@@ -49,13 +49,13 @@ internal struct SuccessCallback {
     
     let callback: (_ response: Response<Data>, _ queue: OperationQueue) throws -> Void
     
-    init<T : DataInitializable>(responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
+    init<T>(responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
         self.callback = responseCallback(successCallback: true, responseCodes: responseCodes, callback: callback)
     }
     
 }
 
-private func responseCallback<T : DataInitializable>(
+private func responseCallback<T>(
     successCallback: Bool,
     responseCodes: Set<Int>,
     callback: @escaping (_ response: Response<T>) -> Void)

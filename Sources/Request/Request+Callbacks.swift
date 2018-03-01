@@ -16,7 +16,7 @@ extension Request {
         progressCallbacks.append(callback)
     }
     
-    public mutating func response<T : DataInitializable>(_ responseCodes: ResponseCodes..., callback: @escaping (_ response: Response<T>) -> Void) {
+    public mutating func response<T>(_ responseCodes: ResponseCodes..., callback: @escaping (_ response: Response<T>) -> Void) {
         addResponse(reduceResponseCodes(responseCodes), callback: callback)
     }
     
@@ -24,7 +24,7 @@ extension Request {
         addResponse(reduceResponseCodes(responseCodes), callback: callback)
     }
     
-    internal mutating func addResponse<T : DataInitializable>(_ responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
+    internal mutating func addResponse<T>(_ responseCodes: Set<Int>, callback: @escaping (_ response: Response<T>) -> Void) {
         responseCallbacks.append(ResponseCallback(responseCodes: responseCodes, callback: callback))
     }
     
@@ -40,7 +40,7 @@ extension Request {
         completionCallbacks.append(callback)
     }
     
-    public mutating func success<T : DataInitializable>(_ responseCodes: ResponseCodes..., callback: ((_ response: Response<T>) -> Void)?) {
+    public mutating func success<T>(_ responseCodes: ResponseCodes..., callback: ((_ response: Response<T>) -> Void)?) {
         success(reduceSuccessCodes(responseCodes), callback: callback)
     }
     
@@ -48,7 +48,7 @@ extension Request {
         success(reduceSuccessCodes(responseCodes), callback: callback)
     }
     
-    internal mutating func success<T : DataInitializable>(_ responseCodes: Set<Int>, callback: ((_ response: Response<T>) -> Void)?) {
+    internal mutating func success<T>(_ responseCodes: Set<Int>, callback: ((_ response: Response<T>) -> Void)?) {
         if let callback = callback {
             successCallback = SuccessCallback(responseCodes: responseCodes, callback: callback)
         } else {
