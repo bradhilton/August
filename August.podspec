@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "August"
-  s.version      = "0.4.0"
+  s.version      = "0.4.1"
   s.summary      = "The Swift Client You Deserve"
   s.description  = <<-DESC
                     A simple Swift HTTP client that casts responses to your domain models.
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/bradhilton/August"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Brad Hilton" => "brad@skyvive.com" }
-  s.source       = { :git => "https://github.com/bradhilton/August.git", :tag => "0.4.0" }
+  s.source       = { :git => "https://github.com/bradhilton/August.git", :tag => "0.4.1" }
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"

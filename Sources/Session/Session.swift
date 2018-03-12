@@ -8,7 +8,11 @@
 
 import AssociatedValues
 
-let augustQueue = OperationQueue()
+let augustQueue: OperationQueue = {
+    let queue = OperationQueue()
+    queue.maxConcurrentOperationCount = 1
+    return queue
+}()
 
 open class Session {
     
