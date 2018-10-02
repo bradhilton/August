@@ -16,7 +16,7 @@ let augustQueue: OperationQueue = {
 
 open class Session {
     
-    open static let sharedSession = Session()
+    public static let sharedSession = Session()
     
     internal let session: URLSession
     internal let maximumSimultaneousTasks: Int?

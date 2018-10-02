@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37D2D06BCE06564A2B7EC16D /* Pods_August_AugustTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9665F207CB1EA9620B0838 /* Pods_August_AugustTests.framework */; };
 		5B3AF4B04C6DABF0528AD51E /* Pods_August.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5C1D63D380E8752A610E69 /* Pods_August.framework */; };
+		A26483D52163C73D00AF0266 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = A26483D42163C73D00AF0266 /* .swift-version */; };
 		A290A6671D480BF6006FA2B9 /* _RequestBuilder+Casting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A290A6661D480BF6006FA2B9 /* _RequestBuilder+Casting.swift */; };
 		A2CD546F1CEBFBF9000FF02B /* August.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CD546E1CEBFBF9000FF02B /* August.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2CD54761CEBFBF9000FF02B /* August.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2CD546B1CEBFBF9000FF02B /* August.framework */; };
@@ -56,6 +57,7 @@
 		731C1D019B3395FB1AB1877B /* Pods-AugustTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugustTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugustTests/Pods-AugustTests.release.xcconfig"; sourceTree = "<group>"; };
 		88F5490799A657EE30601B19 /* Pods-August.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-August.release.xcconfig"; path = "Pods/Target Support Files/Pods-August/Pods-August.release.xcconfig"; sourceTree = "<group>"; };
 		9F9665F207CB1EA9620B0838 /* Pods_August_AugustTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_August_AugustTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26483D42163C73D00AF0266 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		A290A6661D480BF6006FA2B9 /* _RequestBuilder+Casting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "_RequestBuilder+Casting.swift"; sourceTree = "<group>"; };
 		A2CD546B1CEBFBF9000FF02B /* August.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = August.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CD546E1CEBFBF9000FF02B /* August.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = August.h; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		A2CD54611CEBFBF9000FF02B = {
 			isa = PBXGroup;
 			children = (
+				A26483D42163C73D00AF0266 /* .swift-version */,
 				68B3E2F69933831A416DD997 /* Frameworks */,
 				4AF8CC7A5AA6DB178009C11A /* Pods */,
 				A2CD546C1CEBFBF9000FF02B /* Products */,
@@ -321,7 +324,6 @@
 				A2CD54671CEBFBF9000FF02B /* Frameworks */,
 				A2CD54681CEBFBF9000FF02B /* Headers */,
 				A2CD54691CEBFBF9000FF02B /* Resources */,
-				3882EF9651295BD01E03A9F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,7 +343,6 @@
 				A2CD54721CEBFBF9000FF02B /* Frameworks */,
 				A2CD54731CEBFBF9000FF02B /* Resources */,
 				8EB0498BE7B9D068EBBED5EA /* [CP] Embed Pods Frameworks */,
-				4EEC13D62C81CE96CB28C239 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -369,7 +370,7 @@
 					};
 					A2CD54741CEBFBF9000FF02B = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -396,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26483D52163C73D00AF0266 /* .swift-version in Resources */,
 				A2CD54861CEC0B31000FF02B /* August.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,36 +428,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3882EF9651295BD01E03A9F8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-August/Pods-August-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4EEC13D62C81CE96CB28C239 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-August-AugustTests/Pods-August-AugustTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8EB0498BE7B9D068EBBED5EA /* [CP] Embed Pods Frameworks */ = {
@@ -679,7 +651,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -701,7 +673,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -714,8 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradhilton.AugustTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -728,8 +699,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradhilton.AugustTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
