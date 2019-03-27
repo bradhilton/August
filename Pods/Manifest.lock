@@ -1,11 +1,11 @@
 PODS:
-  - AssociatedValues (3.0.0)
+  - AssociatedValues (5.0.0)
   - Convertible (4.2.0):
     - Reflection (~> 0.18.0)
   - Reflection (0.18.0)
 
 DEPENDENCIES:
-  - AssociatedValues (~> 3.0.0)
+  - AssociatedValues (~> 5.0.0)
   - Convertible (~> 4.2.0)
 
 SPEC REPOS:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - Reflection
 
 SPEC CHECKSUMS:
-  AssociatedValues: 5c29f5c0bb2672cf9ef0394bcbe3ce28b9fa0c2a
+  AssociatedValues: 33dfc4f4d0ec2f1177a2558e176364e2ac849cd1
   Convertible: c912b733fa37bcf129e1a100d52ffeab59a78246
   Reflection: 3baa5670837f450a6432b80bad5fc1cb99664665
 
 PODFILE CHECKSUM: 321a7c45e86f20d9fba1f798051e2b4b509feac4
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.2
