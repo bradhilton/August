@@ -9,7 +9,7 @@
 import XCTest
 import August
 
-struct User : Convertible {
+struct User : DataConvertible, Codable {
     var id: Int?
     var name: String
 }

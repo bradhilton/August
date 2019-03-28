@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "August"
-  s.version      = "0.5.0"
+  s.version      = "5.0.1"
   s.summary      = "The Swift Client You Deserve"
   s.description  = <<-DESC
                     A simple Swift HTTP client that casts responses to your domain models.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.source_files  = "Sources", "Sources/**/*.{swift,h,m}"
   s.requires_arc = true
 
-  s.dependency 'Convertible', '5.0.1'
+  s.dependency 'Convertible', '5.0.2'
   s.dependency 'AssociatedValues', '5.0.0'
 
 end

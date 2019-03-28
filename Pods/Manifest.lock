@@ -1,10 +1,10 @@
 PODS:
   - AssociatedValues (5.0.0)
-  - Convertible (5.0.1)
+  - Convertible (5.0.2)
 
 DEPENDENCIES:
   - AssociatedValues (= 5.0.0)
-  - Convertible (= 5.0.1)
+  - Convertible (= 5.0.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -13,7 +13,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AssociatedValues: 33dfc4f4d0ec2f1177a2558e176364e2ac849cd1
-  Convertible: f59d5a0bf60a1b81fff6916b82af792b37faf0e4
+  Convertible: a9606064b2139d1ed44d01881ba93c1148c4dbd4
 
 PODFILE CHECKSUM: 321a7c45e86f20d9fba1f798051e2b4b509feac4
 

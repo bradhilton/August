@@ -7,35 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0581A341E43D431752714023E434DEF2 /* ConvertibleOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D602C383F3DE736F4E36241E8DD92 /* ConvertibleOptions.swift */; };
-		0D4683315724B7AD64A44F0AAA12E887 /* String+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC032FA84032A7BC2A0A59118AB13919 /* String+Convertible.swift */; };
-		0DB2DDA4E0D2CB6FC899D0C723DE3ED2 /* NSNull+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F20FFF2F24F226725955816F140FC /* NSNull+Convertible.swift */; };
-		0EE5784B56A0EF4F9476347166E50D9F /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF856198E40C318E660D72C008E9B7 /* Initializable.swift */; };
-		11264F1FD3EC6BA8D8C3E7C8F5877290 /* AssociatedValues-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6FA703857A12CB147961D5AF981131 /* AssociatedValues-dummy.m */; };
+		11264F1FD3EC6BA8D8C3E7C8F5877290 /* AssociatedValues-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 746EE1F5B05B045D6C61D0720C4136F5 /* AssociatedValues-dummy.m */; };
+		1BE3A003FB482340F101E5E3F2F8ACB3 /* Convertible.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E8B673747D6DDED0B409EDC9E4DE49F /* Convertible.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		33BC68836BAD71A68B5CAE7E3CA1FEA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		359212E93DCA3BEF7EA756AA8C1A5D1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		4F8C9DDEAD0545A3D3859603237B8DCC /* Convertible.h in Headers */ = {isa = PBXBuildFile; fileRef = 087E3AE1941900F84538FD0486C8EFAF /* Convertible.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51E4456834577CEAA64B0AB1563C8738 /* Convertible-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E597F88CAB27C3C4A652551E427D50E /* Convertible-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56C58010A9E11EE0450DB249E84E82CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		61FAE0ADF7D40523A51C2C833067260D /* ConvertibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89A4C249E2375A856B9D337E40AC25B /* ConvertibleOption.swift */; };
+		366EA988E3EA8FDF36BB36B54618073F /* Convertible-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA70636642A2411F070B3D23EE1367 /* Convertible-dummy.m */; };
+		4675423FEF8D273119FE1BDF83F498A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		678EDA96E550EFE500D4713C82D273E8 /* Pods-August-AugustTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F87EA688C014799ED82DD5BA6FB37BEA /* Pods-August-AugustTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6BD5C638F6635EA500936D3B844FDA21 /* ConvertibleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0603C643FBB8BBD5F43102AB98779B60 /* ConvertibleError.swift */; };
-		7690EF991FF9BBB10AC3F939489FE42A /* AssociatedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DFF0B3EC28CC701CCDB689CC5EE826 /* AssociatedValues.swift */; };
-		7DADE0A80F1A147A48D7414E3BC32740 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554BE61AB0862564A039632216F9CBEA /* Serializable.swift */; };
+		69EF5C549397451A350593985F2CA430 /* Array+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622AC29FB173B17DC707F623EF0DB115 /* Array+Convertible.swift */; };
+		75DCE2ED9E68663A13EDC8C0B327DC01 /* ConvertibleOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CB0DB21447FA939FDC333876D801C /* ConvertibleOptions.swift */; };
+		7690EF991FF9BBB10AC3F939489FE42A /* AssociatedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7DF08ECA80F0862E6719DC15F60DA /* AssociatedValues.swift */; };
+		7AEE1C600BEF3F9B64294359E3AEABC4 /* String+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0F96E4DB4B079A8D90A027EDC6E351 /* String+Convertible.swift */; };
 		7E1449F3F436C23E4D7E10E1452C8B92 /* Pods-August-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F36FDDE4573BF77E6F2605F3914F086 /* Pods-August-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88499BD1A7FA3B8536C709FBFA27D6BC /* UnderscoreToCamelCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D590149A87BC386E55DA90ED31FE28A7 /* UnderscoreToCamelCase.swift */; };
-		9288C93AD9E04B01A4A42000CB5A6A26 /* NSString+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F2AC8988D004D7ED33E66E935CF33 /* NSString+Convertible.swift */; };
+		8365BA23C7DAFF60A41D21A679414AC9 /* NSNull+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72282428CEA8BA74056174AA0C4CB5C7 /* NSNull+Convertible.swift */; };
+		90001489E64BD30CD4D20AE2FCEA3C0F /* NSString+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E5DAF79175038E361C9FE8828449A /* NSString+Convertible.swift */; };
 		9C2BD833A30FFCF33E2D6D460AB5CEA7 /* Pods-August-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B959EF7BABDB0BE99ED0EF2C5B37984 /* Pods-August-dummy.m */; };
 		9E8D4D409AB71F1D6A7C783289E8FAFA /* Pods-August-AugustTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E203FCDE122D1B03FB7DBB3CD9889DA5 /* Pods-August-AugustTests-dummy.m */; };
-		A3B448E1FB1778DFC167685805EE4E9D /* Array+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CF548CCD7919BC0622BAAF3CF95CE /* Array+Convertible.swift */; };
-		B0F22CDB70BD256E075398273F638788 /* RawValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3B5214081715460D3E3DED62E727B /* RawValue.swift */; };
-		B77939CC05F1A4724F3146CE011D34D8 /* Convertible-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD07DB2916BBCF35EC6BC85F90E209F5 /* Convertible-dummy.m */; };
-		BB3987E503A2143F4F28ADF47D8371BB /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D57EFD70FFD4238B713EDB78BA9016 /* Convertible.swift */; };
-		C757F7C45607448E3D3F818C4ABD2DEC /* NSData+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAE24D439362D0E8174983198F9F8D6 /* NSData+Convertible.swift */; };
-		E523F5BB63858927D29F20D0BE747E24 /* AssociatedValues-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E15F638EAF763931D7DCCC61C3EFDA14 /* AssociatedValues-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6F663099C318D06350667F729E4FFB8 /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABABA6AE75B647E5F29EFB0146E2217 /* DataConvertible.swift */; };
-		E8CA1B71D2E41CB112198A010328A96A /* AssociatedValues.h in Headers */ = {isa = PBXBuildFile; fileRef = E17AB61A015BC0A56A8BB13E0BD47702 /* AssociatedValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCFBF301F0C34AD2229C630AFC62E3EB /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1E07986AC41CB46B0CEF784BA482FA /* DataConvertible.swift */; };
+		D70B9E641DCC6B6864EAAE990466A215 /* ConvertibleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08320562E0155B8226FB44C9ABDDC6F /* ConvertibleError.swift */; };
+		DDF5BD88BF6ABB0AFF017E3C62BBB933 /* Convertible-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 423126CE325B7C710B68EE172952DED0 /* Convertible-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E01DDFCF524C497F166D22B33B0F3AF3 /* NSData+Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04882C6C28E4F6602ACEC08D81256537 /* NSData+Convertible.swift */; };
+		E523F5BB63858927D29F20D0BE747E24 /* AssociatedValues-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4B2C49D8F7D3D923D38619397520B1 /* AssociatedValues-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8CA1B71D2E41CB112198A010328A96A /* AssociatedValues.h in Headers */ = {isa = PBXBuildFile; fileRef = F2998D5F54E4825821BB2F0C2EA8E5B3 /* AssociatedValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1C06F3DB43AC11FF26FF06979720BD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		F4A5F28A0DB06BA439D9F53D4B9209CE /* ConvertibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0302479C1F436E19A9FD4D9C3683D59 /* ConvertibleOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,58 +65,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00C08F20C68C61A88D56A0AFC398AA5C /* AssociatedValues.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AssociatedValues.xcconfig; sourceTree = "<group>"; };
-		0603C643FBB8BBD5F43102AB98779B60 /* ConvertibleError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConvertibleError.swift; path = Convertible/Errors/ConvertibleError.swift; sourceTree = "<group>"; };
+		04882C6C28E4F6602ACEC08D81256537 /* NSData+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSData+Convertible.swift"; path = "Convertible/Cocoa Extensions/NSData+Convertible.swift"; sourceTree = "<group>"; };
 		06CF57731E576E6C8293B604C57D2FA4 /* Pods_August.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_August.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		087E3AE1941900F84538FD0486C8EFAF /* Convertible.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Convertible.h; path = Convertible/Convertible.h; sourceTree = "<group>"; };
+		0AC7DF08ECA80F0862E6719DC15F60DA /* AssociatedValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedValues.swift; path = AssociatedValues/AssociatedValues.swift; sourceTree = "<group>"; };
+		0B0F96E4DB4B079A8D90A027EDC6E351 /* String+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Convertible.swift"; path = "Convertible/Swift Extensions/String+Convertible.swift"; sourceTree = "<group>"; };
 		0C9231BA6AE777E85A545C831650C2DC /* Pods-August-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-August-acknowledgements.markdown"; sourceTree = "<group>"; };
 		14C8E1AD52357C9F87686AD0C5D9EE8C /* Pods-August-AugustTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-August-AugustTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1ADFA0274DD3A911A3EAFC2AEDAE1CFD /* Pods-August.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-August.debug.xcconfig"; sourceTree = "<group>"; };
-		2AC50D4CBF755954F424D53E0B28AFA5 /* AssociatedValues-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AssociatedValues-Info.plist"; sourceTree = "<group>"; };
+		2C044957D40739D36BE47F03B0F9C30C /* Convertible.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Convertible.xcconfig; sourceTree = "<group>"; };
 		2F0B988A785E1DAD858E5379DC5555F6 /* Pods-August.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-August.modulemap"; sourceTree = "<group>"; };
 		2F36FDDE4573BF77E6F2605F3914F086 /* Pods-August-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-August-umbrella.h"; sourceTree = "<group>"; };
-		2FAE24D439362D0E8174983198F9F8D6 /* NSData+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSData+Convertible.swift"; path = "Convertible/Cocoa Extensions/NSData+Convertible.swift"; sourceTree = "<group>"; };
-		331A60A396CDE979E5A233263D6A2E20 /* Convertible.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Convertible.modulemap; sourceTree = "<group>"; };
-		394861B8B2C9F90FF46E7C7A49739ECF /* Convertible-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Convertible-prefix.pch"; sourceTree = "<group>"; };
-		39DFF0B3EC28CC701CCDB689CC5EE826 /* AssociatedValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedValues.swift; path = AssociatedValues/AssociatedValues.swift; sourceTree = "<group>"; };
+		30C56F679ADAFFC33E9DBE889C7B2435 /* AssociatedValues.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AssociatedValues.modulemap; sourceTree = "<group>"; };
 		3FD81C98DCA76073EE0A13F8EEE77709 /* Pods-August.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-August.release.xcconfig"; sourceTree = "<group>"; };
+		423126CE325B7C710B68EE172952DED0 /* Convertible-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Convertible-umbrella.h"; sourceTree = "<group>"; };
+		497E5DAF79175038E361C9FE8828449A /* NSString+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSString+Convertible.swift"; path = "Convertible/Cocoa Extensions/NSString+Convertible.swift"; sourceTree = "<group>"; };
+		4C4CB0DB21447FA939FDC333876D801C /* ConvertibleOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConvertibleOptions.swift; path = Convertible/Options/ConvertibleOptions.swift; sourceTree = "<group>"; };
 		4C506B76D8F9FA6A47C361F605AC6753 /* Pods-August-AugustTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-August-AugustTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4E597F88CAB27C3C4A652551E427D50E /* Convertible-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Convertible-umbrella.h"; sourceTree = "<group>"; };
-		5194BFAB06BDD9AD6907A4342933E4F0 /* Convertible-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Convertible-Info.plist"; sourceTree = "<group>"; };
-		554BE61AB0862564A039632216F9CBEA /* Serializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Serializable.swift; path = Convertible/Convertible/Serializable.swift; sourceTree = "<group>"; };
+		4D1E07986AC41CB46B0CEF784BA482FA /* DataConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataConvertible.swift; path = Convertible/DataConvertible/DataConvertible.swift; sourceTree = "<group>"; };
+		5E8B673747D6DDED0B409EDC9E4DE49F /* Convertible.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Convertible.h; path = Convertible/Convertible.h; sourceTree = "<group>"; };
+		622AC29FB173B17DC707F623EF0DB115 /* Array+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Convertible.swift"; path = "Convertible/Swift Extensions/Array+Convertible.swift"; sourceTree = "<group>"; };
 		69E6ABFBC3840FD4D02F511C98C28ECA /* Pods-August-AugustTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-August-AugustTests.release.xcconfig"; sourceTree = "<group>"; };
-		6A6FA703857A12CB147961D5AF981131 /* AssociatedValues-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AssociatedValues-dummy.m"; sourceTree = "<group>"; };
 		6B26BAFFA5B4A0CD92B47FE4E3BAF696 /* Pods-August-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-August-acknowledgements.plist"; sourceTree = "<group>"; };
-		72D57EFD70FFD4238B713EDB78BA9016 /* Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Convertible.swift; path = Convertible/Convertible/Convertible.swift; sourceTree = "<group>"; };
+		72282428CEA8BA74056174AA0C4CB5C7 /* NSNull+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNull+Convertible.swift"; path = "Convertible/Cocoa Extensions/NSNull+Convertible.swift"; sourceTree = "<group>"; };
+		746EE1F5B05B045D6C61D0720C4136F5 /* AssociatedValues-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AssociatedValues-dummy.m"; sourceTree = "<group>"; };
 		760A444FC9FBB288788C7F9A050B063C /* Pods-August-AugustTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-August-AugustTests.modulemap"; sourceTree = "<group>"; };
 		7B959EF7BABDB0BE99ED0EF2C5B37984 /* Pods-August-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-August-dummy.m"; sourceTree = "<group>"; };
+		7EBA70636642A2411F070B3D23EE1367 /* Convertible-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Convertible-dummy.m"; sourceTree = "<group>"; };
 		8140C59DFDD6A682ABE7E29CB7976600 /* Pods_August_AugustTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_August_AugustTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		894A06960FC2483F1B7FFC27C1CAFFCF /* AssociatedValues-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AssociatedValues-Info.plist"; sourceTree = "<group>"; };
 		903DA36EF567E807976F35BEDFA1F203 /* Pods-August-AugustTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-August-AugustTests-Info.plist"; sourceTree = "<group>"; };
 		91C0B426DBA0C907465E42E62EAD3C21 /* AssociatedValues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AssociatedValues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		92DF856198E40C318E660D72C008E9B7 /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Convertible/Convertible/Initializable.swift; sourceTree = "<group>"; };
-		983F20FFF2F24F226725955816F140FC /* NSNull+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNull+Convertible.swift"; path = "Convertible/Cocoa Extensions/NSNull+Convertible.swift"; sourceTree = "<group>"; };
-		9D8F2AC8988D004D7ED33E66E935CF33 /* NSString+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSString+Convertible.swift"; path = "Convertible/Cocoa Extensions/NSString+Convertible.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5CD3B5AA7D5520E04A27022AA446485 /* AssociatedValues-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AssociatedValues-prefix.pch"; sourceTree = "<group>"; };
+		A657BEB772C45072E5D0292991A3986F /* AssociatedValues.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AssociatedValues.xcconfig; sourceTree = "<group>"; };
 		A92D1B271E8FFAE3005C1D3CB9BDBBC7 /* Pods-August-AugustTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-August-AugustTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B1E02E1F8BE31BD79F4CB4B831E1CD07 /* AssociatedValues.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AssociatedValues.modulemap; sourceTree = "<group>"; };
-		B57CF548CCD7919BC0622BAAF3CF95CE /* Array+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Convertible.swift"; path = "Convertible/Swift Extensions/Array+Convertible.swift"; sourceTree = "<group>"; };
-		BD07DB2916BBCF35EC6BC85F90E209F5 /* Convertible-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Convertible-dummy.m"; sourceTree = "<group>"; };
+		AE4B2C49D8F7D3D923D38619397520B1 /* AssociatedValues-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AssociatedValues-umbrella.h"; sourceTree = "<group>"; };
 		BEDA70FDFEFC26312E98799F267E5F3F /* Convertible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Convertible.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CEA6FDB6A66651E452A869B285A627C9 /* AssociatedValues-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AssociatedValues-prefix.pch"; sourceTree = "<group>"; };
-		D15D602C383F3DE736F4E36241E8DD92 /* ConvertibleOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConvertibleOptions.swift; path = Convertible/Options/ConvertibleOptions.swift; sourceTree = "<group>"; };
-		D590149A87BC386E55DA90ED31FE28A7 /* UnderscoreToCamelCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnderscoreToCamelCase.swift; path = Convertible/Convertible/UnderscoreToCamelCase.swift; sourceTree = "<group>"; };
 		D60EC923E3A6477633D3DE3A0EC3B560 /* Pods-August-AugustTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-August-AugustTests-frameworks.sh"; sourceTree = "<group>"; };
-		E15F638EAF763931D7DCCC61C3EFDA14 /* AssociatedValues-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AssociatedValues-umbrella.h"; sourceTree = "<group>"; };
-		E17AB61A015BC0A56A8BB13E0BD47702 /* AssociatedValues.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AssociatedValues.h; path = AssociatedValues/AssociatedValues.h; sourceTree = "<group>"; };
+		E1A47A06A47D7E05FD341EF7DEDCFFB2 /* Convertible-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Convertible-Info.plist"; sourceTree = "<group>"; };
 		E203FCDE122D1B03FB7DBB3CD9889DA5 /* Pods-August-AugustTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-August-AugustTests-dummy.m"; sourceTree = "<group>"; };
-		E5E289C2AECB458158A9AAB7022E78A7 /* Convertible.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Convertible.xcconfig; sourceTree = "<group>"; };
+		E77031A9D8E7940C7E190339876B23A2 /* Convertible-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Convertible-prefix.pch"; sourceTree = "<group>"; };
 		EBC0856CFAE64C2C31173A52E866B009 /* Pods-August-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-August-Info.plist"; sourceTree = "<group>"; };
-		F2F3B5214081715460D3E3DED62E727B /* RawValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RawValue.swift; path = "Convertible/Raw Value/RawValue.swift"; sourceTree = "<group>"; };
+		EFB9A5F7343AC7174001C5EE5D22D489 /* Convertible.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Convertible.modulemap; sourceTree = "<group>"; };
+		F0302479C1F436E19A9FD4D9C3683D59 /* ConvertibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConvertibleOption.swift; path = Convertible/Options/ConvertibleOption.swift; sourceTree = "<group>"; };
+		F08320562E0155B8226FB44C9ABDDC6F /* ConvertibleError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConvertibleError.swift; path = Convertible/Errors/ConvertibleError.swift; sourceTree = "<group>"; };
+		F2998D5F54E4825821BB2F0C2EA8E5B3 /* AssociatedValues.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AssociatedValues.h; path = AssociatedValues/AssociatedValues.h; sourceTree = "<group>"; };
 		F87EA688C014799ED82DD5BA6FB37BEA /* Pods-August-AugustTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-August-AugustTests-umbrella.h"; sourceTree = "<group>"; };
-		F89A4C249E2375A856B9D337E40AC25B /* ConvertibleOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConvertibleOption.swift; path = Convertible/Options/ConvertibleOption.swift; sourceTree = "<group>"; };
-		FABABA6AE75B647E5F29EFB0146E2217 /* DataConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataConvertible.swift; path = Convertible/DataConvertible/DataConvertible.swift; sourceTree = "<group>"; };
-		FC032FA84032A7BC2A0A59118AB13919 /* String+Convertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Convertible.swift"; path = "Convertible/Swift Extensions/String+Convertible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,11 +131,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D16BB7434C1400DA0F41E49C63E4822 /* Frameworks */ = {
+		60AA79C78187E0511EA27ADD13A5C345 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C58010A9E11EE0450DB249E84E82CA /* Foundation.framework in Frameworks */,
+				4675423FEF8D273119FE1BDF83F498A4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,14 +161,37 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		15023F295E495EB7CF273E783883B2A9 /* AssociatedValues */ = {
+		0F7CA51BBFB1C2B936FB705874E8B82A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E17AB61A015BC0A56A8BB13E0BD47702 /* AssociatedValues.h */,
-				39DFF0B3EC28CC701CCDB689CC5EE826 /* AssociatedValues.swift */,
-				E41DFD0C38D194C49C02F082EAC18B25 /* Support Files */,
+				6A16D6C56060D4057B988325F225A5E6 /* AssociatedValues */,
+				B39FE5B5643A1A337DE24FF1597A6F66 /* Convertible */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A16D6C56060D4057B988325F225A5E6 /* AssociatedValues */ = {
+			isa = PBXGroup;
+			children = (
+				F2998D5F54E4825821BB2F0C2EA8E5B3 /* AssociatedValues.h */,
+				0AC7DF08ECA80F0862E6719DC15F60DA /* AssociatedValues.swift */,
+				ECB8FD07BEBE5BEC4C407910F5DB2581 /* Support Files */,
 			);
 			path = AssociatedValues;
+			sourceTree = "<group>";
+		};
+		90FA6332C74DBBF694B091EA045F7058 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFB9A5F7343AC7174001C5EE5D22D489 /* Convertible.modulemap */,
+				2C044957D40739D36BE47F03B0F9C30C /* Convertible.xcconfig */,
+				7EBA70636642A2411F070B3D23EE1367 /* Convertible-dummy.m */,
+				E1A47A06A47D7E05FD341EF7DEDCFFB2 /* Convertible-Info.plist */,
+				E77031A9D8E7940C7E190339876B23A2 /* Convertible-prefix.pch */,
+				423126CE325B7C710B68EE172952DED0 /* Convertible-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Convertible";
 			sourceTree = "<group>";
 		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
@@ -187,29 +200,6 @@
 				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		9CC70A9ECA8F79EACAE7DBB5C759D1A6 /* Convertible */ = {
-			isa = PBXGroup;
-			children = (
-				B57CF548CCD7919BC0622BAAF3CF95CE /* Array+Convertible.swift */,
-				087E3AE1941900F84538FD0486C8EFAF /* Convertible.h */,
-				72D57EFD70FFD4238B713EDB78BA9016 /* Convertible.swift */,
-				0603C643FBB8BBD5F43102AB98779B60 /* ConvertibleError.swift */,
-				F89A4C249E2375A856B9D337E40AC25B /* ConvertibleOption.swift */,
-				D15D602C383F3DE736F4E36241E8DD92 /* ConvertibleOptions.swift */,
-				FABABA6AE75B647E5F29EFB0146E2217 /* DataConvertible.swift */,
-				92DF856198E40C318E660D72C008E9B7 /* Initializable.swift */,
-				2FAE24D439362D0E8174983198F9F8D6 /* NSData+Convertible.swift */,
-				983F20FFF2F24F226725955816F140FC /* NSNull+Convertible.swift */,
-				9D8F2AC8988D004D7ED33E66E935CF33 /* NSString+Convertible.swift */,
-				F2F3B5214081715460D3E3DED62E727B /* RawValue.swift */,
-				554BE61AB0862564A039632216F9CBEA /* Serializable.swift */,
-				FC032FA84032A7BC2A0A59118AB13919 /* String+Convertible.swift */,
-				D590149A87BC386E55DA90ED31FE28A7 /* UnderscoreToCamelCase.swift */,
-				E18D04A9A4BEA896700B9DC755F4D4A8 /* Support Files */,
-			);
-			path = Convertible;
 			sourceTree = "<group>";
 		};
 		9E883C61DA0023C69F329EDB418A1BF4 /* Pods-August */ = {
@@ -245,6 +235,24 @@
 			path = "Target Support Files/Pods-August-AugustTests";
 			sourceTree = "<group>";
 		};
+		B39FE5B5643A1A337DE24FF1597A6F66 /* Convertible */ = {
+			isa = PBXGroup;
+			children = (
+				622AC29FB173B17DC707F623EF0DB115 /* Array+Convertible.swift */,
+				5E8B673747D6DDED0B409EDC9E4DE49F /* Convertible.h */,
+				F08320562E0155B8226FB44C9ABDDC6F /* ConvertibleError.swift */,
+				F0302479C1F436E19A9FD4D9C3683D59 /* ConvertibleOption.swift */,
+				4C4CB0DB21447FA939FDC333876D801C /* ConvertibleOptions.swift */,
+				4D1E07986AC41CB46B0CEF784BA482FA /* DataConvertible.swift */,
+				04882C6C28E4F6602ACEC08D81256537 /* NSData+Convertible.swift */,
+				72282428CEA8BA74056174AA0C4CB5C7 /* NSNull+Convertible.swift */,
+				497E5DAF79175038E361C9FE8828449A /* NSString+Convertible.swift */,
+				0B0F96E4DB4B079A8D90A027EDC6E351 /* String+Convertible.swift */,
+				90FA6332C74DBBF694B091EA045F7058 /* Support Files */,
+			);
+			path = Convertible;
+			sourceTree = "<group>";
+		};
 		B713F2A2C8630BBCD31CACE7FA3EC299 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +267,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				EFD5133A7D47A07E8E26BFD17CA9FFA9 /* Pods */,
+				0F7CA51BBFB1C2B936FB705874E8B82A /* Pods */,
 				03E803E5BE7A960F4D2BA337649FB1B3 /* Products */,
 				B713F2A2C8630BBCD31CACE7FA3EC299 /* Targets Support Files */,
 			);
@@ -273,55 +281,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E18D04A9A4BEA896700B9DC755F4D4A8 /* Support Files */ = {
+		ECB8FD07BEBE5BEC4C407910F5DB2581 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				331A60A396CDE979E5A233263D6A2E20 /* Convertible.modulemap */,
-				E5E289C2AECB458158A9AAB7022E78A7 /* Convertible.xcconfig */,
-				BD07DB2916BBCF35EC6BC85F90E209F5 /* Convertible-dummy.m */,
-				5194BFAB06BDD9AD6907A4342933E4F0 /* Convertible-Info.plist */,
-				394861B8B2C9F90FF46E7C7A49739ECF /* Convertible-prefix.pch */,
-				4E597F88CAB27C3C4A652551E427D50E /* Convertible-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Convertible";
-			sourceTree = "<group>";
-		};
-		E41DFD0C38D194C49C02F082EAC18B25 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B1E02E1F8BE31BD79F4CB4B831E1CD07 /* AssociatedValues.modulemap */,
-				00C08F20C68C61A88D56A0AFC398AA5C /* AssociatedValues.xcconfig */,
-				6A6FA703857A12CB147961D5AF981131 /* AssociatedValues-dummy.m */,
-				2AC50D4CBF755954F424D53E0B28AFA5 /* AssociatedValues-Info.plist */,
-				CEA6FDB6A66651E452A869B285A627C9 /* AssociatedValues-prefix.pch */,
-				E15F638EAF763931D7DCCC61C3EFDA14 /* AssociatedValues-umbrella.h */,
+				30C56F679ADAFFC33E9DBE889C7B2435 /* AssociatedValues.modulemap */,
+				A657BEB772C45072E5D0292991A3986F /* AssociatedValues.xcconfig */,
+				746EE1F5B05B045D6C61D0720C4136F5 /* AssociatedValues-dummy.m */,
+				894A06960FC2483F1B7FFC27C1CAFFCF /* AssociatedValues-Info.plist */,
+				A5CD3B5AA7D5520E04A27022AA446485 /* AssociatedValues-prefix.pch */,
+				AE4B2C49D8F7D3D923D38619397520B1 /* AssociatedValues-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AssociatedValues";
 			sourceTree = "<group>";
 		};
-		EFD5133A7D47A07E8E26BFD17CA9FFA9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				15023F295E495EB7CF273E783883B2A9 /* AssociatedValues */,
-				9CC70A9ECA8F79EACAE7DBB5C759D1A6 /* Convertible */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		07BD2826B1214C3BC539954BEB4CC670 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51E4456834577CEAA64B0AB1563C8738 /* Convertible-umbrella.h in Headers */,
-				4F8C9DDEAD0545A3D3859603237B8DCC /* Convertible.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0DB86134457EA0CF073DBC83684BDCD7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +312,15 @@
 			files = (
 				E523F5BB63858927D29F20D0BE747E24 /* AssociatedValues-umbrella.h in Headers */,
 				E8CA1B71D2E41CB112198A010328A96A /* AssociatedValues.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EBC0A26ABAC29F1DE2AC4AA2615933 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDF5BD88BF6ABB0AFF017E3C62BBB933 /* Convertible-umbrella.h in Headers */,
+				1BE3A003FB482340F101E5E3F2F8ACB3 /* Convertible.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,12 +395,12 @@
 		};
 		C95F40DDC23104AA1AC5597523DB28F6 /* Convertible */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE07C0F7E46448C62400BAEFCC369FCE /* Build configuration list for PBXNativeTarget "Convertible" */;
+			buildConfigurationList = 0EF43ECA2BA77826F740FB9059A68F41 /* Build configuration list for PBXNativeTarget "Convertible" */;
 			buildPhases = (
-				07BD2826B1214C3BC539954BEB4CC670 /* Headers */,
-				31B2F9C1AD4233483F8C23EBE4BB37F4 /* Sources */,
-				6D16BB7434C1400DA0F41E49C63E4822 /* Frameworks */,
-				C7FBE4448CA787C79CC5B09B841B848A /* Resources */,
+				46EBC0A26ABAC29F1DE2AC4AA2615933 /* Headers */,
+				444B77AB2028987A3EE6E3B60F649DAA /* Sources */,
+				60AA79C78187E0511EA27ADD13A5C345 /* Frameworks */,
+				E541A4BAF81CC6C3D3F08044CB712303 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -478,7 +463,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7FBE4448CA787C79CC5B09B841B848A /* Resources */ = {
+		E541A4BAF81CC6C3D3F08044CB712303 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -505,33 +490,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31B2F9C1AD4233483F8C23EBE4BB37F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A3B448E1FB1778DFC167685805EE4E9D /* Array+Convertible.swift in Sources */,
-				B77939CC05F1A4724F3146CE011D34D8 /* Convertible-dummy.m in Sources */,
-				BB3987E503A2143F4F28ADF47D8371BB /* Convertible.swift in Sources */,
-				6BD5C638F6635EA500936D3B844FDA21 /* ConvertibleError.swift in Sources */,
-				61FAE0ADF7D40523A51C2C833067260D /* ConvertibleOption.swift in Sources */,
-				0581A341E43D431752714023E434DEF2 /* ConvertibleOptions.swift in Sources */,
-				E6F663099C318D06350667F729E4FFB8 /* DataConvertible.swift in Sources */,
-				0EE5784B56A0EF4F9476347166E50D9F /* Initializable.swift in Sources */,
-				C757F7C45607448E3D3F818C4ABD2DEC /* NSData+Convertible.swift in Sources */,
-				0DB2DDA4E0D2CB6FC899D0C723DE3ED2 /* NSNull+Convertible.swift in Sources */,
-				9288C93AD9E04B01A4A42000CB5A6A26 /* NSString+Convertible.swift in Sources */,
-				B0F22CDB70BD256E075398273F638788 /* RawValue.swift in Sources */,
-				7DADE0A80F1A147A48D7414E3BC32740 /* Serializable.swift in Sources */,
-				0D4683315724B7AD64A44F0AAA12E887 /* String+Convertible.swift in Sources */,
-				88499BD1A7FA3B8536C709FBFA27D6BC /* UnderscoreToCamelCase.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		34D345ABA771E1E15AB9FEC69B76C666 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9E8D4D409AB71F1D6A7C783289E8FAFA /* Pods-August-AugustTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		444B77AB2028987A3EE6E3B60F649DAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69EF5C549397451A350593985F2CA430 /* Array+Convertible.swift in Sources */,
+				366EA988E3EA8FDF36BB36B54618073F /* Convertible-dummy.m in Sources */,
+				D70B9E641DCC6B6864EAAE990466A215 /* ConvertibleError.swift in Sources */,
+				F4A5F28A0DB06BA439D9F53D4B9209CE /* ConvertibleOption.swift in Sources */,
+				75DCE2ED9E68663A13EDC8C0B327DC01 /* ConvertibleOptions.swift in Sources */,
+				BCFBF301F0C34AD2229C630AFC62E3EB /* DataConvertible.swift in Sources */,
+				E01DDFCF524C497F166D22B33B0F3AF3 /* NSData+Convertible.swift in Sources */,
+				8365BA23C7DAFF60A41D21A679414AC9 /* NSNull+Convertible.swift in Sources */,
+				90001489E64BD30CD4D20AE2FCEA3C0F /* NSString+Convertible.swift in Sources */,
+				7AEE1C600BEF3F9B64294359E3AEABC4 /* String+Convertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +581,7 @@
 		};
 		0F2C88A78EFB59B792E867978212D32B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C08F20C68C61A88D56A0AFC398AA5C /* AssociatedValues.xcconfig */;
+			baseConfigurationReference = A657BEB772C45072E5D0292991A3986F /* AssociatedValues.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -629,42 +609,10 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		305EA439448CF52FBC41491DA076FC65 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5E289C2AECB458158A9AAB7022E78A7 /* Convertible.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Convertible/Convertible-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Convertible/Convertible-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Convertible/Convertible.modulemap";
-				PRODUCT_MODULE_NAME = Convertible;
-				PRODUCT_NAME = Convertible;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		4FEEB9585BBA79845DA8073FC53258A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00C08F20C68C61A88D56A0AFC398AA5C /* AssociatedValues.xcconfig */;
+			baseConfigurationReference = A657BEB772C45072E5D0292991A3986F /* AssociatedValues.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -693,37 +641,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		52C5EF3D12005D26B6529141A29D8D24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5E289C2AECB458158A9AAB7022E78A7 /* Convertible.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Convertible/Convertible-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Convertible/Convertible-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Convertible/Convertible.modulemap";
-				PRODUCT_MODULE_NAME = Convertible;
-				PRODUCT_NAME = Convertible;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		59FE35F1BCBD26FE5903833EC8900606 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -757,6 +674,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		974FD055674162DA5BF1C806F11F7DBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C044957D40739D36BE47F03B0F9C30C /* Convertible.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Convertible/Convertible-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Convertible/Convertible-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Convertible/Convertible.modulemap";
+				PRODUCT_MODULE_NAME = Convertible;
+				PRODUCT_NAME = Convertible;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -890,6 +839,37 @@
 			};
 			name = Release;
 		};
+		EFCED85CBFC9502963C4A01584CE3B8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C044957D40739D36BE47F03B0F9C30C /* Convertible.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Convertible/Convertible-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Convertible/Convertible-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Convertible/Convertible.modulemap";
+				PRODUCT_MODULE_NAME = Convertible;
+				PRODUCT_NAME = Convertible;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		F232B5ECA11A71BFA199A229B323F454 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -953,6 +933,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0EF43ECA2BA77826F740FB9059A68F41 /* Build configuration list for PBXNativeTarget "Convertible" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCED85CBFC9502963C4A01584CE3B8D /* Debug */,
+				974FD055674162DA5BF1C806F11F7DBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		33CE0238BB1BF87A838A9E5D04F9F32F /* Build configuration list for PBXNativeTarget "AssociatedValues" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -976,15 +965,6 @@
 			buildConfigurations = (
 				AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */,
 				F232B5ECA11A71BFA199A229B323F454 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AE07C0F7E46448C62400BAEFCC369FCE /* Build configuration list for PBXNativeTarget "Convertible" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52C5EF3D12005D26B6529141A29D8D24 /* Debug */,
-				305EA439448CF52FBC41491DA076FC65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
