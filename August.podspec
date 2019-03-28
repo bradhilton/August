@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "August"
-  s.version      = "0.4.4"
+  s.version      = "0.5.0"
   s.summary      = "The Swift Client You Deserve"
   s.description  = <<-DESC
                     A simple Swift HTTP client that casts responses to your domain models.
