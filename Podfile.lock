@@ -1,23 +1,19 @@
 PODS:
   - AssociatedValues (5.0.0)
-  - Convertible (4.2.0):
-    - Reflection (~> 0.18.0)
-  - Reflection (0.18.0)
+  - Convertible (5.0.1)
 
 DEPENDENCIES:
-  - AssociatedValues (~> 5.0.0)
-  - Convertible (~> 4.2.0)
+  - AssociatedValues (= 5.0.0)
+  - Convertible (= 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AssociatedValues
     - Convertible
-    - Reflection
 
 SPEC CHECKSUMS:
   AssociatedValues: 33dfc4f4d0ec2f1177a2558e176364e2ac849cd1
-  Convertible: c912b733fa37bcf129e1a100d52ffeab59a78246
-  Reflection: 3baa5670837f450a6432b80bad5fc1cb99664665
+  Convertible: f59d5a0bf60a1b81fff6916b82af792b37faf0e4
 
 PODFILE CHECKSUM: 321a7c45e86f20d9fba1f798051e2b4b509feac4
 

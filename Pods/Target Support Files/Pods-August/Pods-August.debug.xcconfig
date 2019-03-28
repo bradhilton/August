@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AssociatedValues" "${PODS_CONFIGURATION_BUILD_DIR}/Convertible" "${PODS_CONFIGURATION_BUILD_DIR}/Reflection"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AssociatedValues" "${PODS_CONFIGURATION_BUILD_DIR}/Convertible"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AssociatedValues/AssociatedValues.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Convertible/Convertible.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Reflection/Reflection.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AssociatedValues/AssociatedValues.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Convertible/Convertible.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks' '@executable_path/../../Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "AssociatedValues" -framework "Convertible" -framework "Reflection"
+OTHER_LDFLAGS = $(inherited) -framework "AssociatedValues" -framework "Convertible"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
